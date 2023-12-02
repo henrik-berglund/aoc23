@@ -39,11 +39,24 @@ class TestWft(unittest.TestCase):
         num = int(first + last)
         return num
 
+    def word_to_number(self, word):
+        mapping = {
+            'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4,
+            'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9
+        }
+        if len(word) > 1:
+            return mapping.get(word.lower(), None)
+        else:
+            return int(word)
+
+
     def get_first_num_2(self, str):
+
         pattern = r"(0|1|2|3|4|5|6|7|8|9|zero|one|two|three|four|five|six|seven|eight|nine)"
         match = re.search(pattern, str)
         matched_text = match.group()
-        return matched_text
+
+        return self.word_to_number(matched_text)
 
 
 if __name__ == '__main__':
