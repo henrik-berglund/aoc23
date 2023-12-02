@@ -31,7 +31,9 @@ class TestWft(unittest.TestCase):
                 last = self.part2_get_last_num(line)
 
                 digit = int(f"{first}{last}")
-                print(f"{line} : first {first}, last {last} dig {digit}")
+                #print(f"{line} : first {first}, last {last} dig {digit}")
+                sum += digit
+        print(f"Part2: {sum}")
 
 
     def get_num(self, str):
