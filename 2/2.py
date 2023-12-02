@@ -44,7 +44,9 @@ class TestWft(unittest.TestCase):
                 print(f"max: {max}")
 
 
-
+                if  max['blue'] <= 14 and max['red'] <= 12 and max['green'] <= 13:
+                    sum += game_no
+        print(f"Day 2, part1: {sum}")
 
 if __name__ == '__main__':
     unittest.main()
