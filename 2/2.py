@@ -20,8 +20,13 @@ class TestWft(unittest.TestCase):
         with open("input_2.txt", mode='r', encoding='utf-8') as f:
             while (line := f.readline()):
                 parts = line.split(':', maxsplit=1)
-                num = int(parts[0].split(' ', maxsplit=1)[1])
-                print(f"num {num}: {line}")
+                game_no = int(parts[0].split(' ', maxsplit=1)[1])
+                print(f"{game_no}: {line}")
+
+                parts = parts[1].split(';')
+                for p in parts:
+                    print(f"  {p}")
+
 
 if __name__ == '__main__':
     unittest.main()
