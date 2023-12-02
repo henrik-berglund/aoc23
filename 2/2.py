@@ -22,6 +22,10 @@ class TestWft(unittest.TestCase):
                 parts = line.split(':', maxsplit=1)
                 game_no = int(parts[0].split(' ', maxsplit=1)[1])
                 print(f"{game_no}: {line}")
+                max = {}
+                max['blue'] = 0
+                max['green'] = 0
+                max['red'] = 0
 
                 parts = parts[1].split(';')
                 for p in parts:
@@ -29,12 +33,15 @@ class TestWft(unittest.TestCase):
                     cubes = p.strip().split(',')
                     for c in cubes:
                         cube_def = c.strip().split(' ')
-                        print(f"    cube_def:{cube_def}")
+                        #print(f"    cube_def:{cube_def}")
 
-                        no_of_cubes = cube_def[0]
+                        no_of_cubes = int(cube_def[0])
                         cube_col = cube_def[1]
-                        print(f"    {cube_col}:{no_of_cubes}")
+                        #print(f"    {cube_col}:{no_of_cubes}")
 
+                        if no_of_cubes > max[cube_col]:
+                            max[cube_col] = no_of_cubes
+                print(f"max: {max}")
 
 
 
