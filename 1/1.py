@@ -27,8 +27,10 @@ class TestWft(unittest.TestCase):
         sum = 0
         with open("input.txt", mode='r', encoding='utf-8') as f:
             while (line := f.readline()):
-                first = self.get_first_num_2(line)
-                print(f"{line} : first {first}")
+                first = self.part2_get_first_num(line)
+                last = self.part2_get_last_num(line)
+                print(f"{line} : first {first}, last{last}")
+
 
     def get_num(self, str):
         match = re.search(r"\d", str)
@@ -41,10 +43,23 @@ class TestWft(unittest.TestCase):
 
 
 
-    def get_last_num_2(selfself,str):
+    def part2_get_last_num(selfself,str):
         pattern = r"(0|1|2|3|4|5|6|7|8|9|orez|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin)"
+        reversed_string = ''.join(reversed(str))
+        match = re.search(pattern, reversed_string)
+        matched_text = match.group()
 
-    def get_first_num_2(self, str):
+        mapping = {
+            'orez': 0, 'eno': 1, 'owt': 2, 'eerht': 3, 'ruof': 4,
+            'evif': 5, 'xis': 6, 'neves': 7, 'thgie': 8, 'enin': 9
+        }
+
+        if len(matched_text) > 1:
+            return mapping.get(matched_text.lower(), None)
+        else:
+            return int(matched_text)
+
+    def part2_get_first_num(self, str):
 
         pattern = r"(0|1|2|3|4|5|6|7|8|9|zero|one|two|three|four|five|six|seven|eight|nine)"
         match = re.search(pattern, str)
