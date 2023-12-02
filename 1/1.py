@@ -29,7 +29,9 @@ class TestWft(unittest.TestCase):
             while (line := f.readline()):
                 first = self.part2_get_first_num(line)
                 last = self.part2_get_last_num(line)
-                print(f"{line} : first {first}, last{last}")
+
+                digit = int(f"{first}{last}")
+                print(f"{line} : first {first}, last {last} dig {digit}")
 
 
     def get_num(self, str):
