@@ -26,6 +26,17 @@ class TestWft(unittest.TestCase):
                 parts = parts[1].split(';')
                 for p in parts:
                     print(f"  {p}")
+                    cubes = p.strip().split(',')
+                    for c in cubes:
+                        cube_def = c.strip().split(' ')
+                        print(f"    cube_def:{cube_def}")
+
+                        no_of_cubes = cube_def[0]
+                        cube_col = cube_def[1]
+                        print(f"    {cube_col}:{no_of_cubes}")
+
+
+
 
 
 if __name__ == '__main__':
