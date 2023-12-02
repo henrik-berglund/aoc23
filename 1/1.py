@@ -17,15 +17,15 @@ class TestWft(unittest.TestCase):
 
     def test_part_1(self):
         sum = 0
-        with open("input.txt", mode='r', encoding='utf-8') as f:
+        with open("input_1.txt", mode='r', encoding='utf-8') as f:
             while (line := f.readline()):
                 sum +=  self.get_num(line)
 
-        print(sum)
+        print("Part 1", sum)
 
     def test_part_2(self):
         sum = 0
-        with open("input.txt", mode='r', encoding='utf-8') as f:
+        with open("input_1.txt", mode='r', encoding='utf-8') as f:
             while (line := f.readline()):
                 first = self.part2_get_first_num(line)
                 last = self.part2_get_last_num(line)
@@ -33,7 +33,7 @@ class TestWft(unittest.TestCase):
                 digit = int(f"{first}{last}")
                 #print(f"{line} : first {first}, last {last} dig {digit}")
                 sum += digit
-        print(f"Part2: {sum}")
+        print(f"Part 2: {sum}")
 
 
     def get_num(self, str):
