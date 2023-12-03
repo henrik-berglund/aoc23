@@ -17,8 +17,24 @@ class TestWft(unittest.TestCase):
 
     def test_part_1(self):
         nc = self.get_numbers_and_coords()
-        for l in nc:
-            print(l)
+        #for l in nc:
+        #    print(l)
+        sm = self.get_symbols()
+        for s in sm:
+            print(s)
+
+    def get_symbols(self):
+        symbols = []
+        with open("input_3.txt", mode='r', encoding='utf-8') as f:
+            line_no=0
+            num = ""
+            coordinates = []
+            while (line := f.readline()):
+                for x, c in enumerate(line):
+                    if not c.isdigit() and c != '.' and c != '\n':
+                        symbols.append((c, (x, line_no)))
+                line_no += 1
+            return symbols
 
     def get_numbers_and_coords(self):
         numbers = []
