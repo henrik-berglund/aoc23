@@ -18,21 +18,10 @@ class TestWft(unittest.TestCase):
     def test_part_1(self):
         part1_res = 0
         part2_res = 0
-        numbers = []
-        with open("input_3.txt", mode='r', encoding='utf-8') as f:
-            line_no=0
-            num = ""
-            #while (line := f.readline()):
-            line = f.readline()
-            for x, c in enumerate(line):
-                print(x, c)
-                if c.isdigit():
-                    num += c
-                elif num.isdigit():
-                    numbers.append(int(num))
-                    num = ""
-            print(numbers)
 
+        with open("input_3.txt", mode='r', encoding='utf-8') as f:
+            while (line := f.readline()):
+                pass
         print(f"Day 3, part1: {part1_res}")
         print(f"Day 3, part2: {part2_res}")
 
