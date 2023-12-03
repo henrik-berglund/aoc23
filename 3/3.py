@@ -27,7 +27,6 @@ class TestWft(unittest.TestCase):
         deltas = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (1,1), (0, 1), (-1,1)]
 
         for star_c in stars:
-            print(f"* : {star_c}")
             count=0
             gear = 1
             found = False
@@ -39,10 +38,8 @@ class TestWft(unittest.TestCase):
                         found = True
                         count += 1
                         gear *= number
-                        print(f"  {c} is in {num_c}: num {number}, count: {count}")
                         break
             if count == 2:
-                print(f"**Adding: {gear}")
                 sum += gear
 
         print(f"3.2, Sum: {sum}")
