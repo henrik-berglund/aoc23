@@ -22,15 +22,18 @@ class TestWft(unittest.TestCase):
         with open("input_3.txt", mode='r', encoding='utf-8') as f:
             line_no=0
             num = ""
+            coordinates = []
             #while (line := f.readline()):
             line = f.readline()
             for x, c in enumerate(line):
                 print(x, c)
                 if c.isdigit():
                     num += c
+                    coordinates.append((x, line_no))
                 elif num.isdigit():
-                    numbers.append(int(num))
+                    numbers.append((int(num), coordinates))
                     num = ""
+                    coordinates = []
             print(numbers)
 
         print(f"Day 3, part1: {part1_res}")
