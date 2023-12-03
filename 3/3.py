@@ -16,28 +16,28 @@ class TestWft(unittest.TestCase):
         pass
 
     def test_part_1(self):
-        part1_res = 0
-        part2_res = 0
+        nc = self.get_numbers_and_coords()
+        for l in nc:
+            print(l)
+
+    def get_numbers_and_coords(self):
         numbers = []
         with open("input_3.txt", mode='r', encoding='utf-8') as f:
             line_no=0
             num = ""
             coordinates = []
-            #while (line := f.readline()):
-            line = f.readline()
-            for x, c in enumerate(line):
-                print(x, c)
-                if c.isdigit():
-                    num += c
-                    coordinates.append((x, line_no))
-                elif num.isdigit():
-                    numbers.append((int(num), coordinates))
-                    num = ""
-                    coordinates = []
-            print(numbers)
-
-        print(f"Day 3, part1: {part1_res}")
-        print(f"Day 3, part2: {part2_res}")
+            while (line := f.readline()):
+                line = f.readline()
+                for x, c in enumerate(line):
+                    if c.isdigit():
+                        num += c
+                        coordinates.append((x, line_no))
+                    elif num.isdigit():
+                        numbers.append((int(num), coordinates))
+                        num = ""
+                        coordinates = []
+                line_no += 1
+            return numbers
 
 
 if __name__ == '__main__':
