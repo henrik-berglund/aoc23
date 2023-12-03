@@ -15,14 +15,35 @@ class TestWft(unittest.TestCase):
         #self.char_encoding = 'iso-8859-1'
         pass
 
+    def add_coords(self, coord, delta):
+        return (coord[0]+delta[0], coord[1]+delta[1])
+
     def test_part_1(self):
         nc = self.get_numbers_and_coords()
-        #for l in nc:
-        #    print(l)
-        sm = self.get_symbols()
-        for s in sm:
-            print(s)
 
+        sc = self.get_symbols()
+        sum = 0
+
+        deltas = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (1,1), (0, 1), (-1,1)]
+        for num in nc:
+            found = False
+            number, num_coords = num
+
+            for nc in num_coords:
+
+                for d in deltas:
+                    c = self.add_coords(nc, d)
+                    if c in sc:
+                        found = True
+                        break
+                if found:
+                    break
+
+            if found:
+                print(f"Adding: {number}")
+                sum += number
+
+        print(f"3.1, Sum: {sum}")
     def get_symbols(self):
         symbols = []
         with open("input_3.txt", mode='r', encoding='utf-8') as f:
@@ -32,7 +53,7 @@ class TestWft(unittest.TestCase):
             while (line := f.readline()):
                 for x, c in enumerate(line):
                     if not c.isdigit() and c != '.' and c != '\n':
-                        symbols.append((c, (x, line_no)))
+                        symbols.append((x, line_no))
                 line_no += 1
             return symbols
 
@@ -43,7 +64,6 @@ class TestWft(unittest.TestCase):
             num = ""
             coordinates = []
             while (line := f.readline()):
-                line = f.readline()
                 for x, c in enumerate(line):
                     if c.isdigit():
                         num += c
