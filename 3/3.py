@@ -18,6 +18,35 @@ class TestWft(unittest.TestCase):
     def add_coords(self, coord, delta):
         return (coord[0]+delta[0], coord[1]+delta[1])
 
+    def test_part_2(self):
+        nc = self.get_numbers_and_coords()
+
+        sc, stars = self.get_symbols()
+        sum = 0
+
+        deltas = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (1,1), (0, 1), (-1,1)]
+
+        for star_c in stars:
+            print(f"* : {star_c}")
+            count=0
+            gear = 1
+            found = False
+            for num in nc:
+                number, num_c = num
+                for d in deltas:
+                    c = self.add_coords(star_c, d)
+                    if c in num_c:
+                        found = True
+                        count += 1
+                        gear *= number
+                        print(f"  {c} is in {num_c}: num {number}, count: {count}")
+                        break
+            if count == 2:
+                print(f"**Adding: {gear}")
+                sum += gear
+
+        print(f"3.2, Sum: {sum}")
+
     def test_part_1(self):
         nc = self.get_numbers_and_coords()
 
