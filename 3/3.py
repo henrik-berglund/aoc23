@@ -21,7 +21,7 @@ class TestWft(unittest.TestCase):
     def test_part_1(self):
         nc = self.get_numbers_and_coords()
 
-        sc = self.get_symbols()
+        sc, stars = self.get_symbols()
         sum = 0
 
         deltas = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (1,1), (0, 1), (-1,1)]
@@ -40,12 +40,13 @@ class TestWft(unittest.TestCase):
                     break
 
             if found:
-                print(f"Adding: {number}")
                 sum += number
 
         print(f"3.1, Sum: {sum}")
     def get_symbols(self):
         symbols = []
+        stars = []
+
         with open("input_3.txt", mode='r', encoding='utf-8') as f:
             line_no=0
             num = ""
@@ -54,8 +55,10 @@ class TestWft(unittest.TestCase):
                 for x, c in enumerate(line):
                     if not c.isdigit() and c != '.' and c != '\n':
                         symbols.append((x, line_no))
+                        if c == '*':
+                            stars.append((x, line_no))
                 line_no += 1
-            return symbols
+            return symbols, stars
 
     def get_numbers_and_coords(self):
         numbers = []
