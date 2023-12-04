@@ -74,9 +74,12 @@ class TestWft(unittest.TestCase):
                 card_nums.append(c[0])
                 counts[c[0]] = count
 
-            for c in card_nums:
-                print(c, ": ", counts[c])
+            self.traverse(card_nums, counts)
 
+    def traverse(self, card_nums, counts):
+        for i, c in enumerate(card_nums):
+            print(c, ": ", counts[c])
+            # extend()
 
 
 if __name__ == '__main__':
