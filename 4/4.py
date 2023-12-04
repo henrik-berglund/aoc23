@@ -98,9 +98,7 @@ class TestWft(unittest.TestCase):
 
         for i, c in enumerate(card_nums):
             wins = counts[c]
-            #for l in range(level):
-            #    print(" ", end="")
-            #print(c, ": ", wins)
+       
             card_count += 1
 
             for j in range(wins):
