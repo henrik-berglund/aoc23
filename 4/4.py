@@ -60,7 +60,7 @@ class TestWft(unittest.TestCase):
 
                 cards.append((dummy[0], winning_nums, my_nums))
 
-            wins = []
+            card_nums = []
             counts = {}
             for c in cards:
                 winning_nums = c[1]
@@ -71,21 +71,12 @@ class TestWft(unittest.TestCase):
                     if n in winning_nums:
                         count += 1
 
-                wins.append((c[0], count))
+                card_nums.append(c[0])
                 counts[c[0]] = count
 
-            for w in wins:
-                print(w[0], ": ", counts[w[0]])
+            for c in card_nums:
+                print(c, ": ", counts[c])
 
-            done_cards = []
-            while len(wins) != 0:
-                w = wins.pop(0)
-                done_cards.append(w)
-                for i in w[1]:
-                    all_cards.extend( )
-
-        print(f"Day 3, part1: {sum}")
-        #print(f"Day 3, part2: {part2_res}")
 
 
 if __name__ == '__main__':
