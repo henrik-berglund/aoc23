@@ -76,28 +76,37 @@ class TestWft(unittest.TestCase):
 
             self.traverse(0, card_nums, counts)
 
+    global card_count
+    card_count = 0
     def traverse_one(self, level, card_nums, counts):
+        global card_count
         c = card_nums[0]
         wins = counts[c]
         for l in range(level):
             print(" ", end="")
         print(c, ": ", wins)
+        card_count += 1
+
         for j in range(wins):
-            print(c, "traversing child: ", j)
+            #print(c, "traversing child: ", j)
             self.traverse_one(level+1, card_nums[j+1:], counts)
 
 
 
     def traverse(self, level, card_nums, counts):
+        global card_count
+
         for i, c in enumerate(card_nums):
             wins = counts[c]
             for l in range(level):
                 print(" ", end="")
             print(c, ": ", wins)
-            for j in range(wins):
-                print(c, "traversing child: ", j)
-                self.traverse_one(level+1, card_nums[j+1:], counts)
+            card_count += 1
 
+            for j in range(wins):
+                #print(c, "traversing child: ", j)
+                self.traverse_one(level+1, card_nums[i+j+1:], counts)
+        print("Card count: ", card_count)
 
 
 if __name__ == '__main__':
