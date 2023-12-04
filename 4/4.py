@@ -44,6 +44,38 @@ class TestWft(unittest.TestCase):
         print(f"Day 3, part1: {sum}")
         #print(f"Day 3, part2: {part2_res}")
 
+    def test_part_2(self):
+
+        sum = 0
+        cards = []
+        with open("input_4.txt", mode='r', encoding='utf-8') as f:
+            while (line := f.readline()):
+                dummy = line.split(":")
+                split2 = dummy[1].split('|')
+                winning_nums =  split2[0].split(' ')
+                winning_nums = [element for element in winning_nums if element != '']
+
+                my_nums =  split2[1].strip().split(' ')
+                my_nums = [element for element in my_nums if element != '']
+
+                cards.append((winning_nums, my_nums))
+
+            for c in cards:
+                winning_nums = c[0]
+                my_nums = c[1]
+
+                count = 0
+                for n in my_nums:
+                    if n in winning_nums:
+                        count += 1
+
+                print("*", winning_nums)
+                print("+", my_nums)
+                print(":", count)
+
+        print(f"Day 3, part1: {sum}")
+        #print(f"Day 3, part2: {part2_res}")
+
 
 if __name__ == '__main__':
     unittest.main()
