@@ -37,11 +37,7 @@ class TestWft(unittest.TestCase):
                             value *= 2
                 sum += value
 
-                print("*", winning_nums)
-                print("+", my_nums)
-                print(":", value)
-
-        print(f"Day 3, part1: {sum}")
+        print(f"Day 4, part1: {sum}")
         #print(f"Day 3, part2: {part2_res}")
 
     def test_part_2(self):
@@ -82,15 +78,10 @@ class TestWft(unittest.TestCase):
         global card_count
         c = card_nums[0]
         wins = counts[c]
-        #for l in range(level):
-        #    print(" ", end="")
-        #print(c, ": ", wins)
         card_count += 1
 
         for j in range(wins):
-            #print(c, "traversing child: ", j)
             self.traverse_one(level+1, card_nums[j+1:], counts)
-
 
 
     def traverse(self, level, card_nums, counts):
@@ -98,13 +89,10 @@ class TestWft(unittest.TestCase):
 
         for i, c in enumerate(card_nums):
             wins = counts[c]
-       
             card_count += 1
-
             for j in range(wins):
-                #print(c, "traversing child: ", j)
                 self.traverse_one(level+1, card_nums[i+j+1:], counts)
-        print("Card count: ", card_count)
+        print("Day4, part2: ", card_count)
 
 
 if __name__ == '__main__':
