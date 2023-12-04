@@ -58,21 +58,27 @@ class TestWft(unittest.TestCase):
                 my_nums =  split2[1].strip().split(' ')
                 my_nums = [element for element in my_nums if element != '']
 
-                cards.append((winning_nums, my_nums))
+                cards.append((dummy[0], winning_nums, my_nums))
 
+            wins = []
             for c in cards:
-                winning_nums = c[0]
-                my_nums = c[1]
+                winning_nums = c[1]
+                my_nums = c[2]
 
                 count = 0
                 for n in my_nums:
                     if n in winning_nums:
                         count += 1
 
-                print("*", winning_nums)
-                print("+", my_nums)
-                print(":", count)
+                wins.append((c[0], count))
 
+                #print("&", c[0])
+                #print("*", winning_nums)
+                #print("+", my_nums)
+                #print(":", count)
+
+            for w in wins:
+                print(w)
         print(f"Day 3, part1: {sum}")
         #print(f"Day 3, part2: {part2_res}")
 
