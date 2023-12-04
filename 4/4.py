@@ -16,7 +16,6 @@ class TestWft(unittest.TestCase):
         pass
 
     def test_part_1(self):
-
         sum = 0
         with open("input_4.txt", mode='r', encoding='utf-8') as f:
             while (line := f.readline()):
@@ -38,10 +37,8 @@ class TestWft(unittest.TestCase):
                 sum += value
 
         print(f"Day 4, part1: {sum}")
-        #print(f"Day 3, part2: {part2_res}")
 
     def test_part_2(self):
-
         sum = 0
         cards = []
         with open("input_4.txt", mode='r', encoding='utf-8') as f:
@@ -61,7 +58,6 @@ class TestWft(unittest.TestCase):
             for c in cards:
                 winning_nums = c[1]
                 my_nums = c[2]
-
                 count = 0
                 for n in my_nums:
                     if n in winning_nums:
