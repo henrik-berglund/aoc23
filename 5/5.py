@@ -41,11 +41,9 @@ def part1():
         next = s
         for h in headings:
             next = lookup(next, h, maps)
-
         locations.append(next)
     locations.sort()
     print("Part 1: ", locations[0])
-
 
 def part2():
     maps = {}
@@ -75,22 +73,18 @@ def part2():
             next_ranges = lookup_ranges(next_ranges, h, maps)
 
         locations.extend(next_ranges)
-    #locations.sort()
     locations.sort(key=lambda x : x[0] )
     print("Part2: ", locations[0][0])
-
 
 def lookup(s, h, maps):
     map = maps[h]
     next = None
     for tuple in map:
         dest, source, len = tuple
-        if s >= source and s < source+len:
+        if s in range(source, source+len):
             next = dest + s - source
     if not next:
         next = s
-
-    #print(h, s, ": ", next)
 
     return next
 
