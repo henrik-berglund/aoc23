@@ -10,8 +10,11 @@ headings = ['seeds',
 def part1():
     with open("input_5.txt", mode='r', encoding='utf-8') as f:
         while (line := f.readline()):
-            for h in headings:
-                if h in line:
+            if 'seeds' in line:
+                nums = line[:5]
+                print(nums)
+            else:
+                for h in headings:
                     print(line)
 
 
