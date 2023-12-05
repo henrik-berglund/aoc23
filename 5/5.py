@@ -21,7 +21,7 @@ def part1():
             if 'seeds' in line:
                 nums = line[7:].split(' ')
                 seeds = [int(num.strip()) for num in nums]
-                print(seeds)
+                #print(seeds)
             elif (match := mode_line(line)):
                 mode = match
                 #print("mode: ", mode)
@@ -32,11 +32,17 @@ def part1():
                 #print(tuple, mode)
                 maps[mode].append(tuple)
 
-    for s in seeds:
-        next = s
-        for h in headings:
-            next = lookup(next, h, maps)
-        print("seed, loc", s, next)
+        locations = []
+        for s in seeds:
+            print("---Seed ", s)
+            next = s
+            for h in headings:
+                next = lookup(next, h, maps)
+
+            locations.append(next)
+        locations.sort()
+        print(locations)
+
 
 
 def lookup(s, h, maps):
@@ -49,7 +55,7 @@ def lookup(s, h, maps):
     if not next:
         next = s
 
-    #print(h, s, ": ", next)
+    print(h, s, ": ", next)
 
     return next
 
