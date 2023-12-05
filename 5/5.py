@@ -13,11 +13,19 @@ def mode_line(line):
             mode = h
     return mode
 
+def readfile(file_name):
+    lines = []
+    with open(file_name, mode='r', encoding='utf-8') as f:
+        while (line := f.readline()):
+            lines.append(line)
+    return lines
+
 def part1():
     maps = {}
 
-    with open("input_5.txt", mode='r', encoding='utf-8') as f:
-        while (line := f.readline()):
+    for i in range(1):
+        lines = readfile("input_5.txt")
+        for line in lines:
             if 'seeds' in line:
                 nums = line[7:].split(' ')
                 seeds = [int(num.strip()) for num in nums]
@@ -43,12 +51,6 @@ def part1():
         locations.sort()
         print("Part 1: ", locations[0])
 
-def readfile(file_name):
-    lines = []
-    with open(file_name, mode='r', encoding='utf-8') as f:
-        while (line := f.readline()):
-            lines.append(line)
-    return lines
 
 def part2():
     maps = {}
