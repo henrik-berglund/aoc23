@@ -118,7 +118,7 @@ def lookup_ranges(in_ranges, h, maps):
                 elif i_first(lookup_interval) > i_last(map_source_interval): # in is to right
                     remains_for_next_tuple.append(lookup_interval)
                 else: #overlap
-                    o_start = max(i_first(lookup_interval), t_source)
+                    o_start = max(i_first(lookup_interval), i_first(map_source_interval))
                     o_end = min(i_last(lookup_interval),
                                 i_last(map_source_interval))
                     offset = i_first(map_dest_interval)-i_first(map_source_interval)
