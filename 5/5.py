@@ -88,7 +88,7 @@ def lookup(s, h, maps):
     else:
         return s
 
-def last_in_interval(start, len):
+def itv_last(start, len):
     return start+len-1
 
 def lookup_ranges(in_ranges, h, maps):
@@ -107,14 +107,14 @@ def lookup_ranges(in_ranges, h, maps):
                 i_start = r[0]
                 i_len = r[1]
 
-                if last_in_interval(i_start, i_len) < t_source: # in is to left
+                if itv_last(i_start, i_len) < t_source: # in is to left
                     remains_for_next_tuple.append(r)
-                elif i_start > t_source + t_len -1: # in is to right
+                elif i_start > itv_last(t_source, t_len): # in is to right
                     remains_for_next_tuple.append(r)
                 else: #overlap
                     o_start = max(i_start, t_source)
-                    o_end = min(last_in_interval(i_start, i_len),
-                                last_in_interval(t_source, t_len))
+                    o_end = min(itv_last(i_start, i_len),
+                                itv_last(t_source, t_len))
                     offset = t_dest-t_source
                     dest_range = (o_start+offset, o_end-o_start+1)
 
@@ -123,11 +123,9 @@ def lookup_ranges(in_ranges, h, maps):
                     if i_start < t_source: # remaining to left
                         rem_range = (i_start, t_source-i_start)
                         remains_for_next_tuple.append(rem_range)
-                    if last_in_interval(i_start, i_len) \
-                            > last_in_interval(t_source, t_len): # remaining to right
-                        rem_range = (t_source+t_len,
-                                     last_in_interval(i_start, i_len)
-                                        - (last_in_interval(t_source, t_len)))
+                    if itv_last(i_start, i_len) > itv_last(t_source, t_len): # remaining to right
+                        rem_range = (t_source + t_len,
+                                     itv_last(i_start, i_len) - (itv_last(t_source, t_len)))
                         remains_for_next_tuple.append(rem_range)
 
             remaining_sub_ranges_of_in_range = remains_for_next_tuple
