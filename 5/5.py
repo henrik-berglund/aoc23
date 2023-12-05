@@ -41,7 +41,7 @@ def part1():
 
             locations.append(next)
         locations.sort()
-        print(locations)
+        print("Part 1: ", locations[0])
 
 def part2():
     maps = {}
@@ -66,7 +66,6 @@ def part2():
 
         locations = []
         for s in seed_ranges:
-            print("###### seed: ", s)
             next_ranges = [s]
             for h in headings:
                 next_ranges = lookup_ranges(next_ranges, h, maps)
@@ -74,7 +73,7 @@ def part2():
             locations.extend(next_ranges)
         #locations.sort()
         locations.sort(key=lambda x : x[0] )
-        print("Part2: ", locations[0])
+        print("Part2: ", locations[0][0])
 
 
 def lookup(s, h, maps):
@@ -92,16 +91,13 @@ def lookup(s, h, maps):
     return next
 
 def lookup_ranges(in_ranges, h, maps):
-    print("*** start ", h)
     map = maps[h]
     next_ranges = []
     unmatched_in_ranges = []
     for ir in in_ranges:
-        print("next in range: ", ir)
         remaining_sub_ranges_of_in_range = [ir]
 
         for tuple in map:
-            print("tuple start: ", remaining_sub_ranges_of_in_range)
             remains_for_next_tuple = []
             while len(remaining_sub_ranges_of_in_range) > 0:
                 r = remaining_sub_ranges_of_in_range.pop(0)
@@ -111,10 +107,8 @@ def lookup_ranges(in_ranges, h, maps):
                 i_len = r[1]
 
                 if i_start + i_len -1 < t_source: # in is to left
-                    print("left, saving for next tuple: ", r)
                     remains_for_next_tuple.append(r)
                 elif i_start > t_source + t_len -1: # in is to right
-                    print("right, saving for next tuple: ", r)
                     remains_for_next_tuple.append(r)
                 else: #overlap
                     o_start = max(i_start, t_source)
@@ -123,32 +117,24 @@ def lookup_ranges(in_ranges, h, maps):
                     dest_range = (o_start+offset, o_end-o_start+1)
 
                     next_ranges.append(dest_range)
-                    print("Overlap: ", r, ":  => ", dest_range)
 
                     if i_start < t_source: # remaining to left
                         rem_range = (i_start, t_source-i_start)
                         remains_for_next_tuple.append(rem_range)
-                        print("left over, saving for next tuple: ", rem_range)
                     if i_start+i_len-1 > t_source + t_len -1: # remainig to right
                         rem_range = (t_source+t_len,
                                      i_start+i_len-1- (t_source+t_len-1))
                         remains_for_next_tuple.append(rem_range)
-                        print("right over, saving for next tuple: ", rem_range)
-
-            if len(remaining_sub_ranges_of_in_range) > 0:
-                print("Passed to next:", remaining_sub_ranges_of_in_range)
 
             remaining_sub_ranges_of_in_range = remains_for_next_tuple
 
         if len(remaining_sub_ranges_of_in_range) > 0:
-            print("Not matched my any tuple: ", remaining_sub_ranges_of_in_range)
             unmatched_in_ranges.extend(remaining_sub_ranges_of_in_range)
 
     if len(unmatched_in_ranges) > 0:
-        print("Unmatched:",unmatched_in_ranges )
         next_ranges.extend(unmatched_in_ranges)
 
-    print(h, ": ", in_ranges, " => ", next_ranges)
     return next_ranges
 
+part1()
 part2()
