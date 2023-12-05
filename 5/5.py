@@ -23,33 +23,31 @@ def readfile(file_name):
 def part1():
     maps = {}
 
-    for i in range(1):
-        lines = readfile("input_5.txt")
-        for line in lines:
-            if 'seeds' in line:
-                nums = line[7:].split(' ')
-                seeds = [int(num.strip()) for num in nums]
-                #print(seeds)
-            elif (match := mode_line(line)):
-                mode = match
-                #print("mode: ", mode)
-                maps[mode] = []
-            elif len(line.strip()) != 0:
-                tuple = line.split(' ')
-                tuple = [int(num.strip()) for num in tuple]
-                #print(tuple, mode)
-                maps[mode].append(tuple)
+    lines = readfile("input_5.txt")
+    for line in lines:
+        if 'seeds' in line:
+            nums = line[7:].split(' ')
+            seeds = [int(num.strip()) for num in nums]
+            #print(seeds)
+        elif (match := mode_line(line)):
+            mode = match
+            #print("mode: ", mode)
+            maps[mode] = []
+        elif len(line.strip()) != 0:
+            tuple = line.split(' ')
+            tuple = [int(num.strip()) for num in tuple]
+            #print(tuple, mode)
+            maps[mode].append(tuple)
 
-        locations = []
-        for s in seeds:
-            #print("---Seed ", s)
-            next = s
-            for h in headings:
-                next = lookup(next, h, maps)
+    locations = []
+    for s in seeds:
+        next = s
+        for h in headings:
+            next = lookup(next, h, maps)
 
-            locations.append(next)
-        locations.sort()
-        print("Part 1: ", locations[0])
+        locations.append(next)
+    locations.sort()
+    print("Part 1: ", locations[0])
 
 
 def part2():
@@ -71,7 +69,6 @@ def part2():
         elif len(line.strip()) != 0:
             tuple = line.split(' ')
             tuple = [int(num.strip()) for num in tuple]
-            #print(tuple, mode)
             maps[mode].append(tuple)
 
     locations = []
