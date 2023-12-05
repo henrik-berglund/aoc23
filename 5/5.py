@@ -11,11 +11,13 @@ def part1():
     with open("input_5.txt", mode='r', encoding='utf-8') as f:
         while (line := f.readline()):
             if 'seeds' in line:
-                nums = line[:5]
+                nums = line[7:].split(' ')
+                nums = [num.strip() for num in nums]
                 print(nums)
             else:
                 for h in headings:
-                    print(line)
+                    if h in line:
+                        print(line)
 
 
 part1()
