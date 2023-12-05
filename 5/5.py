@@ -110,17 +110,15 @@ def lookup_ranges(in_ranges, h, maps):
                 r = remaining_sub_ranges_of_in_range.pop(0)
 
                 t_dest, t_source, t_len = tuple
-                i_start = r[0]
-                i_len = r[1]
                 lookup_interval = r
 
 
                 if i_last(lookup_interval) < t_source: # in is to left
-                    remains_for_next_tuple.append(r)
+                    remains_for_next_tuple.append(lookup_interval)
                 elif i_first(lookup_interval) > itv_last(t_source, t_len): # in is to right
-                    remains_for_next_tuple.append(r)
+                    remains_for_next_tuple.append(lookup_interval)
                 else: #overlap
-                    o_start = max(i_start, t_source)
+                    o_start = max(i_first(lookup_interval), t_source)
                     o_end = min(i_last(lookup_interval),
                                 itv_last(t_source, t_len))
                     offset = t_dest-t_source
@@ -128,8 +126,9 @@ def lookup_ranges(in_ranges, h, maps):
 
                     next_ranges.append(dest_range)
 
-                    if i_start < t_source: # remaining to left
-                        rem_range = (i_start, t_source-i_start)
+                    if i_first(lookup_interval) < t_source: # remaining to left
+                        rem_range = (i_first(lookup_interval),
+                                        t_source-i_first(lookup_interval))
                         remains_for_next_tuple.append(rem_range)
                     if i_last(lookup_interval) > itv_last(t_source, t_len): # remaining to right
                         rem_range = (t_source + t_len,
