@@ -28,7 +28,7 @@ class TestAoc(unittest.TestCase):
         for line in file:
             pass
 
-        print(f"Day 3, part1: {part1_res}")
+        print(f"Day 6, part1: {part1_res}")
 
 
 if __name__ == '__main__':
