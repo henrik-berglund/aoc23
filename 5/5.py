@@ -78,15 +78,17 @@ def part2():
 
 def lookup(s, h, maps):
     map = maps[h]
-    next = None
+
+    found = False
     for tuple in map:
         dest, source, len = tuple
         if s in range(source, source+len):
-            next = dest + s - source
-    if not next:
-        next = s
+            found = dest + s - source
 
-    return next
+    if found:
+        return found
+    else:
+        return s
 
 def lookup_ranges(in_ranges, h, maps):
     map = maps[h]
