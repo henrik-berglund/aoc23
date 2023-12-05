@@ -121,7 +121,7 @@ def lookup_ranges(in_ranges, h, maps):
                     o_start = max(i_first(lookup_interval), t_source)
                     o_end = min(i_last(lookup_interval),
                                 i_last(map_source_interval))
-                    offset = t_dest-t_source
+                    offset = i_first(map_dest_interval)-i_first(map_source_interval)
                     dest_range = (o_start+offset, o_end-o_start+1)
 
                     next_ranges.append(dest_range)
