@@ -74,7 +74,7 @@ def part2():
             locations.extend(next_ranges)
         #locations.sort()
         locations.sort(key=lambda x : x[0] )
-        print(locations)
+        print("Part2: ", locations[0])
 
 
 def lookup(s, h, maps):
