@@ -88,6 +88,9 @@ def lookup(s, h, maps):
     else:
         return s
 
+def last_in_interval(start, len):
+    return start+len-1
+
 def lookup_ranges(in_ranges, h, maps):
     map = maps[h]
     next_ranges = []
@@ -104,7 +107,7 @@ def lookup_ranges(in_ranges, h, maps):
                 i_start = r[0]
                 i_len = r[1]
 
-                if i_start + i_len -1 < t_source: # in is to left
+                if last_in_interval(i_start, i_len) < t_source: # in is to left
                     remains_for_next_tuple.append(r)
                 elif i_start > t_source + t_len -1: # in is to right
                     remains_for_next_tuple.append(r)
