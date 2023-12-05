@@ -107,32 +107,32 @@ def lookup_ranges(in_ranges, h, maps):
         for tuple in map:
             remains_for_next_tuple = []
             while len(remaining_sub_ranges_of_in_range) > 0:
-                r = remaining_sub_ranges_of_in_range.pop(0)
+                lookup_interval = remaining_sub_ranges_of_in_range.pop(0)
 
                 t_dest, t_source, t_len = tuple
-                lookup_interval = r
+                map_dest_interval = (t_dest, t_len)
+                map_source_interval = (t_source, t_len)
 
-
-                if i_last(lookup_interval) < t_source: # in is to left
+                if i_last(lookup_interval) < i_first(map_source_interval): # in is to left
                     remains_for_next_tuple.append(lookup_interval)
-                elif i_first(lookup_interval) > itv_last(t_source, t_len): # in is to right
+                elif i_first(lookup_interval) > i_last(map_source_interval): # in is to right
                     remains_for_next_tuple.append(lookup_interval)
                 else: #overlap
                     o_start = max(i_first(lookup_interval), t_source)
                     o_end = min(i_last(lookup_interval),
-                                itv_last(t_source, t_len))
+                                i_last(map_source_interval))
                     offset = t_dest-t_source
                     dest_range = (o_start+offset, o_end-o_start+1)
 
                     next_ranges.append(dest_range)
 
-                    if i_first(lookup_interval) < t_source: # remaining to left
+                    if i_first(lookup_interval) < i_first(map_source_interval): # remaining to left
                         rem_range = (i_first(lookup_interval),
-                                        t_source-i_first(lookup_interval))
+                                        i_first(map_source_interval)-i_first(lookup_interval))
                         remains_for_next_tuple.append(rem_range)
                     if i_last(lookup_interval) > itv_last(t_source, t_len): # remaining to right
                         rem_range = (t_source + t_len,
-                                     i_last(lookup_interval) - (itv_last(t_source, t_len)))
+                                     i_last(lookup_interval) - i_last(map_source_interval))
                         remains_for_next_tuple.append(rem_range)
 
             remaining_sub_ranges_of_in_range = remains_for_next_tuple
