@@ -71,7 +71,7 @@ def part2():
             for h in headings:
                 next_ranges = lookup_ranges(next_ranges, h, maps)
 
-            locations.append(next_ranges)
+            locations.extend(next_ranges)
         #locations.sort()
         locations.sort(key=lambda x : x[0] )
         print(locations)
