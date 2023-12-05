@@ -77,10 +77,8 @@ def part2():
     print("Part2: ", locations[0][0])
 
 def lookup(s, h, maps):
-    map = maps[h]
-
     found = False
-    for tuple in map:
+    for tuple in maps[h]:
         dest, source, len = tuple
         if s in range(source, source+len):
             found = dest + s - source
