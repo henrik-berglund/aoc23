@@ -28,15 +28,12 @@ def part1():
         if 'seeds' in line:
             nums = line[7:].split(' ')
             seeds = [int(num.strip()) for num in nums]
-            #print(seeds)
         elif (match := mode_line(line)):
             mode = match
-            #print("mode: ", mode)
             maps[mode] = []
         elif len(line.strip()) != 0:
             tuple = line.split(' ')
             tuple = [int(num.strip()) for num in tuple]
-            #print(tuple, mode)
             maps[mode].append(tuple)
 
     locations = []
