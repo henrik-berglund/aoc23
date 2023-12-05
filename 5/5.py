@@ -130,7 +130,7 @@ def lookup_ranges(in_ranges, h, maps):
                         rem_range = (i_first(lookup_interval),
                                         i_first(map_source_interval)-i_first(lookup_interval))
                         remains_for_next_tuple.append(rem_range)
-                    if i_last(lookup_interval) > itv_last(t_source, t_len): # remaining to right
+                    if i_last(lookup_interval) > i_last(map_source_interval): # remaining to right
                         rem_range = (t_source + t_len,
                                      i_last(lookup_interval) - i_last(map_source_interval))
                         remains_for_next_tuple.append(rem_range)
