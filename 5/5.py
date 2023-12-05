@@ -131,7 +131,7 @@ def lookup_ranges(in_ranges, h, maps):
                         print("left over, saving for next tuple: ", rem_range)
                     if i_start+i_len-1 > t_source + t_len -1: # remainig to right
                         rem_range = (t_source+t_len,
-                                     i_start+i_len-1- t_source+t_len)
+                                     i_start+i_len-1- (t_source+t_len-1))
                         remains_for_next_tuple.append(rem_range)
                         print("right over, saving for next tuple: ", rem_range)
 

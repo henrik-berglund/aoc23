@@ -1,0 +1,167 @@
+###### seed:  (79, 14)
+*** start  seed-to-soil
+next in range:  (79, 14)
+tuple start:  [(79, 14)]
+left, saving for next tuple:  (79, 14)
+tuple start:  [(79, 14)]
+Overlap:  (79, 14) :  =>  (81, 14)
+seed-to-soil :  [(79, 14)]  =>  [(81, 14)]
+*** start  soil-to-fertilizer
+next in range:  (81, 14)
+tuple start:  [(81, 14)]
+right, saving for next tuple:  (81, 14)
+tuple start:  [(81, 14)]
+right, saving for next tuple:  (81, 14)
+tuple start:  [(81, 14)]
+right, saving for next tuple:  (81, 14)
+Not matched my any tuple:  [(81, 14)]
+Unmatched: [(81, 14)]
+soil-to-fertilizer :  [(81, 14)]  =>  [(81, 14)]
+*** start  fertilizer-to-water
+next in range:  (81, 14)
+tuple start:  [(81, 14)]
+right, saving for next tuple:  (81, 14)
+tuple start:  [(81, 14)]
+right, saving for next tuple:  (81, 14)
+tuple start:  [(81, 14)]
+right, saving for next tuple:  (81, 14)
+tuple start:  [(81, 14)]
+right, saving for next tuple:  (81, 14)
+Not matched my any tuple:  [(81, 14)]
+Unmatched: [(81, 14)]
+fertilizer-to-water :  [(81, 14)]  =>  [(81, 14)]
+*** start  water-to-light
+next in range:  (81, 14)
+tuple start:  [(81, 14)]
+right, saving for next tuple:  (81, 14)
+tuple start:  [(81, 14)]
+Overlap:  (81, 14) :  =>  (74, 14)
+water-to-light :  [(81, 14)]  =>  [(74, 14)]
+*** start  light-to-temperature
+next in range:  (74, 14)
+tuple start:  [(74, 14)]
+Overlap:  (74, 14) :  =>  (45, 11)
+left over, saving for next tuple:  (74, 3)
+tuple start:  [(74, 3)]
+right, saving for next tuple:  (74, 3)
+tuple start:  [(74, 3)]
+Overlap:  (74, 3) :  =>  (78, 3)
+light-to-temperature :  [(74, 14)]  =>  [(45, 11), (78, 3)]
+*** start  temperature-to-humidity
+next in range:  (45, 11)
+tuple start:  [(45, 11)]
+left, saving for next tuple:  (45, 11)
+tuple start:  [(45, 11)]
+Overlap:  (45, 11) :  =>  (46, 11)
+next in range:  (78, 3)
+tuple start:  [(78, 3)]
+right, saving for next tuple:  (78, 3)
+tuple start:  [(78, 3)]
+right, saving for next tuple:  (78, 3)
+Not matched my any tuple:  [(78, 3)]
+Unmatched: [(78, 3)]
+temperature-to-humidity :  [(45, 11), (78, 3)]  =>  [(46, 11), (78, 3)]
+*** start  humidity-to-location
+next in range:  (46, 11)
+tuple start:  [(46, 11)]
+Overlap:  (46, 11) :  =>  (60, 1)
+left over, saving for next tuple:  (46, 10)
+tuple start:  [(46, 10)]
+left, saving for next tuple:  (46, 10)
+Not matched my any tuple:  [(46, 10)]
+next in range:  (78, 3)
+tuple start:  [(78, 3)]
+Overlap:  (78, 3) :  =>  (82, 3)
+tuple start:  []
+Unmatched: [(46, 10)]
+humidity-to-location :  [(46, 11), (78, 3)]  =>  [(60, 1), (82, 3), (46, 10)]
+###### seed:  (55, 13)
+*** start  seed-to-soil
+next in range:  (55, 13)
+tuple start:  [(55, 13)]
+left, saving for next tuple:  (55, 13)
+tuple start:  [(55, 13)]
+Overlap:  (55, 13) :  =>  (57, 13)
+seed-to-soil :  [(55, 13)]  =>  [(57, 13)]
+*** start  soil-to-fertilizer
+next in range:  (57, 13)
+tuple start:  [(57, 13)]
+right, saving for next tuple:  (57, 13)
+tuple start:  [(57, 13)]
+right, saving for next tuple:  (57, 13)
+tuple start:  [(57, 13)]
+right, saving for next tuple:  (57, 13)
+Not matched my any tuple:  [(57, 13)]
+Unmatched: [(57, 13)]
+soil-to-fertilizer :  [(57, 13)]  =>  [(57, 13)]
+*** start  fertilizer-to-water
+next in range:  (57, 13)
+tuple start:  [(57, 13)]
+Overlap:  (57, 13) :  =>  (53, 4)
+right over, saving for next tuple:  (61, 9)
+tuple start:  [(61, 9)]
+right, saving for next tuple:  (61, 9)
+tuple start:  [(61, 9)]
+right, saving for next tuple:  (61, 9)
+tuple start:  [(61, 9)]
+right, saving for next tuple:  (61, 9)
+Not matched my any tuple:  [(61, 9)]
+Unmatched: [(61, 9)]
+fertilizer-to-water :  [(57, 13)]  =>  [(53, 4), (61, 9)]
+*** start  water-to-light
+next in range:  (53, 4)
+tuple start:  [(53, 4)]
+right, saving for next tuple:  (53, 4)
+tuple start:  [(53, 4)]
+Overlap:  (53, 4) :  =>  (46, 4)
+next in range:  (61, 9)
+tuple start:  [(61, 9)]
+right, saving for next tuple:  (61, 9)
+tuple start:  [(61, 9)]
+Overlap:  (61, 9) :  =>  (54, 9)
+water-to-light :  [(53, 4), (61, 9)]  =>  [(46, 4), (54, 9)]
+*** start  light-to-temperature
+next in range:  (46, 4)
+tuple start:  [(46, 4)]
+left, saving for next tuple:  (46, 4)
+tuple start:  [(46, 4)]
+Overlap:  (46, 4) :  =>  (82, 4)
+tuple start:  []
+next in range:  (54, 9)
+tuple start:  [(54, 9)]
+left, saving for next tuple:  (54, 9)
+tuple start:  [(54, 9)]
+Overlap:  (54, 9) :  =>  (90, 9)
+tuple start:  []
+light-to-temperature :  [(46, 4), (54, 9)]  =>  [(82, 4), (90, 9)]
+*** start  temperature-to-humidity
+next in range:  (82, 4)
+tuple start:  [(82, 4)]
+right, saving for next tuple:  (82, 4)
+tuple start:  [(82, 4)]
+right, saving for next tuple:  (82, 4)
+Not matched my any tuple:  [(82, 4)]
+next in range:  (90, 9)
+tuple start:  [(90, 9)]
+right, saving for next tuple:  (90, 9)
+tuple start:  [(90, 9)]
+right, saving for next tuple:  (90, 9)
+Not matched my any tuple:  [(90, 9)]
+Unmatched: [(82, 4), (90, 9)]
+temperature-to-humidity :  [(82, 4), (90, 9)]  =>  [(82, 4), (90, 9)]
+*** start  humidity-to-location
+next in range:  (82, 4)
+tuple start:  [(82, 4)]
+Overlap:  (82, 4) :  =>  (86, 4)
+tuple start:  []
+next in range:  (90, 9)
+tuple start:  [(90, 9)]
+Overlap:  (90, 9) :  =>  (94, 3)
+right over, saving for next tuple:  (93, 6)
+tuple start:  [(93, 6)]
+Overlap:  (93, 6) :  =>  (56, 4)
+right over, saving for next tuple:  (97, 2)
+Not matched my any tuple:  [(97, 2)]
+Unmatched: [(97, 2)]
+humidity-to-location :  [(82, 4), (90, 9)]  =>  [(86, 4), (94, 3), (56, 4), (97, 2)]
+[[(60, 1), (82, 3), (46, 10)], [(86, 4), (94, 3), (56, 4), (97, 2)]]
