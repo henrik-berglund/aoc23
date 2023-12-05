@@ -12,8 +12,8 @@ def part1():
         while (line := f.readline()):
             if 'seeds' in line:
                 nums = line[7:].split(' ')
-                nums = [num.strip() for num in nums]
-                print(nums)
+                seeds = [num.strip() for num in nums]
+                print(seeds)
             else:
                 for h in headings:
                     if h in line:
