@@ -23,6 +23,9 @@ class TestAoc(unittest.TestCase):
                 lines.append(line)
         return lines
 
+    def test_util(self):
+        verify("hej", self.reporter)
+
     def test_part_1(self):
         day =6
         part1_res = 0
