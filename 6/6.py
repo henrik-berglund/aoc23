@@ -15,7 +15,8 @@ class TestAoc(unittest.TestCase):
         self.char_encoding = 'iso-8859-1'
         pass
 
-    def readfile(self, file_name):
+    def readfile(self, day):
+        file_name = f"input_{day}.txt"
         lines = []
         with open(file_name, mode='r', encoding='utf-8') as f:
             while (line := f.readline()):
@@ -23,12 +24,13 @@ class TestAoc(unittest.TestCase):
         return lines
 
     def test_part_1(self):
+        day =6
         part1_res = 0
-        file = self.readfile("input_6.txt")
+        file = self.readfile(day)
         for line in file:
             pass
 
-        print(f"Day 6, part1: {part1_res}")
+        print(f"Day {day}, part1: {part1_res}")
 
 
 if __name__ == '__main__':
