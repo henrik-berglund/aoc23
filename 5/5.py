@@ -35,13 +35,22 @@ def part1():
     for s in seeds:
         next = s
         for h in headings:
-            next = lookup(s, h, maps)
+            next = lookup(next, h, maps)
         print("seed, loc", s, next)
 
 
 def lookup(s, h, maps):
     map = maps[h]
+    next = None
     for tuple in map:
         dest, source, len = tuple
+        if s >= source and s < source+len:
+            next = dest + s - source
+    if not next:
+        next = s
+
+    #print(h, s, ": ", next)
+
+    return next
 
 part1()
