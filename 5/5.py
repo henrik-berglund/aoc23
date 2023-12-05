@@ -94,6 +94,9 @@ def itv_last(start, len):
 def i_last(interval):
     return interval[0] + interval[1] -1
 
+def i_first(interval):
+    return interval[0]
+
 def lookup_ranges(in_ranges, h, maps):
     map = maps[h]
     next_ranges = []
@@ -114,7 +117,7 @@ def lookup_ranges(in_ranges, h, maps):
 
                 if i_last(lookup_interval) < t_source: # in is to left
                     remains_for_next_tuple.append(r)
-                elif i_start > itv_last(t_source, t_len): # in is to right
+                elif i_first(lookup_interval) > itv_last(t_source, t_len): # in is to right
                     remains_for_next_tuple.append(r)
                 else: #overlap
                     o_start = max(i_start, t_source)
