@@ -31,8 +31,17 @@ def part1():
                 tuple = [int(num.strip()) for num in tuple]
                 #print(tuple, mode)
                 maps[mode].append(tuple)
-    print(maps)
+
+    for s in seeds:
+        next = s
+        for h in headings:
+            next = lookup(s, h, maps)
+        print("seed, loc", s, next)
 
 
+def lookup(s, h, maps):
+    map = maps[h]
+    for tuple in map:
+        dest, source, len = tuple
 
 part1()
