@@ -43,37 +43,45 @@ def part1():
         locations.sort()
         print("Part 1: ", locations[0])
 
+def readfile(file_name):
+    lines = []
+    with open(file_name, mode='r', encoding='utf-8') as f:
+        while (line := f.readline()):
+            lines.append(line)
+    return lines
+
 def part2():
     maps = {}
     seed_ranges = []
-    with open("input_5.txt", mode='r', encoding='utf-8') as f:
-        while (line := f.readline()):
-            if 'seeds' in line:
-                nums = line[7:].split(' ')
-                pairs = [int(num.strip()) for num in nums]
-                while len(pairs) > 0:
-                    start = pairs.pop(0)
-                    l = pairs.pop(0)
-                    seed_ranges.append((start, l))
-            elif (match := mode_line(line)):
-                mode = match
-                maps[mode] = []
-            elif len(line.strip()) != 0:
-                tuple = line.split(' ')
-                tuple = [int(num.strip()) for num in tuple]
-                #print(tuple, mode)
-                maps[mode].append(tuple)
 
-        locations = []
-        for s in seed_ranges:
-            next_ranges = [s]
-            for h in headings:
-                next_ranges = lookup_ranges(next_ranges, h, maps)
+    lines = readfile("input_5.txt")
+    for line in lines:
+        if 'seeds' in line:
+            nums = line[7:].split(' ')
+            pairs = [int(num.strip()) for num in nums]
+            while len(pairs) > 0:
+                start = pairs.pop(0)
+                l = pairs.pop(0)
+                seed_ranges.append((start, l))
+        elif (match := mode_line(line)):
+            mode = match
+            maps[mode] = []
+        elif len(line.strip()) != 0:
+            tuple = line.split(' ')
+            tuple = [int(num.strip()) for num in tuple]
+            #print(tuple, mode)
+            maps[mode].append(tuple)
 
-            locations.extend(next_ranges)
-        #locations.sort()
-        locations.sort(key=lambda x : x[0] )
-        print("Part2: ", locations[0][0])
+    locations = []
+    for s in seed_ranges:
+        next_ranges = [s]
+        for h in headings:
+            next_ranges = lookup_ranges(next_ranges, h, maps)
+
+        locations.extend(next_ranges)
+    #locations.sort()
+    locations.sort(key=lambda x : x[0] )
+    print("Part2: ", locations[0][0])
 
 
 def lookup(s, h, maps):
