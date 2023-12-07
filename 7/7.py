@@ -124,9 +124,13 @@ class TestAoc(unittest.TestCase):
             hands.append(hand)
 
         hands.sort(key = lambda x : x[2], reverse=True)
-        for h in hands:
-            print(h)
-#        print(f"Day {day}, part1: {part1_res}")
+        wins = 0
+        for i, h in enumerate(hands):
+            rank = i+1
+            bid = h[1]
+            win = rank*bid
+            wins += win
+        print(f"Day {day}, part1: {wins}")
 
 
 if __name__ == '__main__':
