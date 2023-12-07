@@ -26,8 +26,28 @@ class TestAoc(unittest.TestCase):
     def test_util(self):
         verify("hej", self.reporter)
 
+    def four(self, hand):
+        vals = {}
+        for h in hand:
+            vals[h] = True
+
+        return len(vals.keys() == 2)
+
+    def five(self, hand):
+        val = hand[0]
+        for v in hand:
+            if v != val:
+                return False
+        return True
+
     def get_rank(self, hand):
-        return 0
+        if self.five(hand):
+            return 1
+        elif self.four(hand):
+            return 2
+
+        return None
+
     def test_part_1(self):
         day = 7
 
