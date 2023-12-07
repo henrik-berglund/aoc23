@@ -47,6 +47,16 @@ class TestAoc(unittest.TestCase):
             return c[0] == 3
         return False
 
+    def three(self, hand):
+        counts = Counter(hand)
+
+        if len(counts.keys()) == 3:
+            c = [counts[x] for x in counts.keys()]
+            c.sort(reverse=True)
+            print(c)
+            return c[0] == 3
+        return False
+
     def five(self, hand):
         val = hand[0]
         for v in hand:
@@ -61,6 +71,8 @@ class TestAoc(unittest.TestCase):
             return 2
         elif self.full(hand):
             return 3
+        elif self.three(hand):
+            return 4
 
         return None
 
