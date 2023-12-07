@@ -123,7 +123,7 @@ class TestAoc(unittest.TestCase):
             hand = (items[0], int(items[1]), rank)
             hands.append(hand)
 
-        hands.sort(key = lambda x : x[2])
+        hands.sort(key = lambda x : x[2], reverse=True)
         for h in hands:
             print(h)
 #        print(f"Day {day}, part1: {part1_res}")
