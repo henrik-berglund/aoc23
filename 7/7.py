@@ -2,6 +2,7 @@ import unittest
 from approvaltests.approvals import verify
 from approvaltests.reporters.generic_diff_reporter_factory import GenericDiffReporterFactory
 import re
+from collections import Counter
 
 class TestAoc(unittest.TestCase):
     @classmethod
@@ -27,11 +28,24 @@ class TestAoc(unittest.TestCase):
         verify("hej", self.reporter)
 
     def four(self, hand):
-        vals = {}
-        for h in hand:
-            vals[h] = True
+        counts = Counter(hand)
 
-        return len(vals.keys()) == 2
+        if len(counts.keys()) == 2:
+            c = [counts[x] for x in counts.keys()]
+            c.sort(reverse=True)
+            print(c)
+            return c[0] == 4
+        return False
+
+    def full(self, hand):
+        counts = Counter(hand)
+
+        if len(counts.keys()) == 2:
+            c = [counts[x] for x in counts.keys()]
+            c.sort(reverse=True)
+            print(c)
+            return c[0] == 3
+        return False
 
     def five(self, hand):
         val = hand[0]
@@ -45,6 +59,8 @@ class TestAoc(unittest.TestCase):
             return 1
         elif self.four(hand):
             return 2
+        elif self.full(hand):
+            return 3
 
         return None
 
