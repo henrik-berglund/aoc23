@@ -111,9 +111,11 @@ class TestAoc(unittest.TestCase):
             items = line.split(' ')
             rank = self.get_rank(items[0])
             hand = (items[0], int(items[1]), rank)
-            print(hand)
             hands.append(hand)
 
+        hands.sort(key = lambda x : x[2])
+        for h in hands:
+            print(h)
 #        print(f"Day {day}, part1: {part1_res}")
 
 
