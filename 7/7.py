@@ -31,7 +31,7 @@ class TestAoc(unittest.TestCase):
         for h in hand:
             vals[h] = True
 
-        return len(vals.keys() == 2)
+        return len(vals.keys()) == 2
 
     def five(self, hand):
         val = hand[0]
