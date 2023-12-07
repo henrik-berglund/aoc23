@@ -89,12 +89,42 @@ class TestAoc(unittest.TestCase):
         num = letters.find(letter)+1
         return hex(num)[2:]
 
+    def rank2(self, letter):
+        letters = 'AKQT98765432J'
+        num = letters.find(letter)+1
+        return hex(num)[2:]
+
     def secondary_rank(self, hand):
         str = ""
         for h in hand:
             str += self.rank(h)
         return str
+
+    def secondary_rank2(self, hand):
+        str = ""
+        for h in hand:
+            str += self.rank2(h)
+        return str
+
     def get_main_rank(self, hand):
+        variants = 'AKQT98765432'
+
+        letters = list(hand)
+        if 'J' in letters:
+            min_rank = "888888"
+            index = letters.index('J')
+            print(index, ": ", letters)
+            for v in variants:
+                letters[index] = v
+                new = "".join(letters)
+                new_rank = self.get_main_rank(new)
+                if new_rank < min_rank:
+                    min_rank = new_rank
+                print("---", new, ": ", min_rank)
+
+            return min_rank
+
+
         if self.five(hand):
             return "1"
         elif self.four(hand):
@@ -119,13 +149,14 @@ class TestAoc(unittest.TestCase):
         file = self.readfile(day)
         for line in file:
             items = line.split(' ')
-            rank = self.get_main_rank(items[0])+self.secondary_rank(items[0])
+            rank = self.get_main_rank(items[0])+self.secondary_rank2(items[0])
             hand = (items[0], int(items[1]), rank)
             hands.append(hand)
 
         hands.sort(key = lambda x : x[2], reverse=True)
         wins = 0
         for i, h in enumerate(hands):
+            print(h)
             rank = i+1
             bid = h[1]
             win = rank*bid
