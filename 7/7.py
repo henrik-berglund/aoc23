@@ -84,21 +84,31 @@ class TestAoc(unittest.TestCase):
                 return False
         return True
 
-    def get_rank(self, hand):
+    def rank(self, letter):
+        letters = 'AKQJT98765432'
+        num = letters.find(letter)+1
+        return hex(num)[2:]
+
+    def secondary_rank(self, hand):
+        str = ""
+        for h in hand:
+            str += self.rank(h)
+        return str
+    def get_main_rank(self, hand):
         if self.five(hand):
-            return 1
+            return "1"
         elif self.four(hand):
-            return 2
+            return "2"
         elif self.full(hand):
-            return 3
+            return "3"
         elif self.three(hand):
-            return 4
+            return "4"
         elif self.twop(hand):
-            return 5
+            return "5"
         elif self.onep(hand):
-            return 6
+            return "6"
         else:
-            return 7
+            return "7"
 
         return None
 
@@ -109,7 +119,7 @@ class TestAoc(unittest.TestCase):
         file = self.readfile(day)
         for line in file:
             items = line.split(' ')
-            rank = self.get_rank(items[0])
+            rank = self.get_main_rank(items[0])+self.secondary_rank(items[0])
             hand = (items[0], int(items[1]), rank)
             hands.append(hand)
 
