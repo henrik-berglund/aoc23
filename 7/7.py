@@ -57,6 +57,16 @@ class TestAoc(unittest.TestCase):
             return c[0] == 3
         return False
 
+    def twop(self, hand):
+        counts = Counter(hand)
+
+        if len(counts.keys()) == 3:
+            c = [counts[x] for x in counts.keys()]
+            c.sort(reverse=True)
+            print(c)
+            return c[0] == 2 and c[1] == 2
+        return False
+
     def five(self, hand):
         val = hand[0]
         for v in hand:
@@ -73,6 +83,8 @@ class TestAoc(unittest.TestCase):
             return 3
         elif self.three(hand):
             return 4
+        elif self.twop(hand):
+            return 5
 
         return None
 
