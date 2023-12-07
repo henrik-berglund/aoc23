@@ -33,7 +33,7 @@ class TestAoc(unittest.TestCase):
         if len(counts.keys()) == 2:
             c = [counts[x] for x in counts.keys()]
             c.sort(reverse=True)
-            print(c)
+            #print(c)
             return c[0] == 4
         return False
 
@@ -43,7 +43,7 @@ class TestAoc(unittest.TestCase):
         if len(counts.keys()) == 2:
             c = [counts[x] for x in counts.keys()]
             c.sort(reverse=True)
-            print(c)
+            #print(c)
             return c[0] == 3
         return False
 
@@ -53,7 +53,7 @@ class TestAoc(unittest.TestCase):
         if len(counts.keys()) == 3:
             c = [counts[x] for x in counts.keys()]
             c.sort(reverse=True)
-            print(c)
+            #print(c)
             return c[0] == 3
         return False
 
@@ -63,8 +63,18 @@ class TestAoc(unittest.TestCase):
         if len(counts.keys()) == 3:
             c = [counts[x] for x in counts.keys()]
             c.sort(reverse=True)
-            print(c)
+            #print(c)
             return c[0] == 2 and c[1] == 2
+        return False
+
+    def onep(self, hand):
+        counts = Counter(hand)
+
+        if len(counts.keys()) == 4:
+            c = [counts[x] for x in counts.keys()]
+            c.sort(reverse=True)
+            #print(c)
+            return c[0] == 2
         return False
 
     def five(self, hand):
@@ -85,6 +95,10 @@ class TestAoc(unittest.TestCase):
             return 4
         elif self.twop(hand):
             return 5
+        elif self.onep(hand):
+            return 6
+        else:
+            return 7
 
         return None
 
