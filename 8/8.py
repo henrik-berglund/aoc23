@@ -20,7 +20,7 @@ class TestAoc(unittest.TestCase):
         lines = []
         with open(file_name, mode='r', encoding='utf-8') as f:
             while (line := f.readline()):
-                lines.append(line)
+                lines.append(line.strip())
         return lines
 
     def test_util(self):
@@ -39,7 +39,9 @@ class TestAoc(unittest.TestCase):
                 left = lr[0].strip()
                 right = lr[1].strip()
                 map[start] = (left, right)
-
+            elif len(line) != 0:
+                dirs = list(line)
+                print(f"dirs: {dirs}")
 
         for k in map.keys():
             print(f"{k}: {map[k][0]} {map[k][1]}")
