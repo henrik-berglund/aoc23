@@ -26,27 +26,105 @@ class TestAoc(unittest.TestCase):
     def test_util(self):
         verify("hej", self.reporter)
 
-    def test_part_1(self):
+    def _test_part_1(self):
         day =8
         map = {}
         file = self.readfile(day)
-        for line in file:
+        for i, line in enumerate(file):
             if '=' in line:
                 node_def = line.split("=")
                 start = node_def[0].strip()
-                dirs = node_def[1].strip()[1:-1]
-                lr = dirs.split(",")
+                d = node_def[1].strip()[1:-1]
+                lr = d.split(",")
                 left = lr[0].strip()
                 right = lr[1].strip()
-                map[start] = (left, right)
+                map[start] = (left, right, i)
             elif len(line) != 0:
                 dirs = list(line)
                 print(f"dirs: {dirs}")
 
-        for k in map.keys():
-            print(f"{k}: {map[k][0]} {map[k][1]}")
-#        print(f"Day {day}, part1: {part1_res}")
+        key = 'AAA'
+        steps = 0
+        pos = 0
+        print(dirs)
+        while key != 'ZZZ':
+            dir = dirs[pos]
 
+            if dir == 'L':
+                key2 = map[key][0]
+            else:
+                key2 = map[key][1]
+            print(f"{key}+{dir} => {key2}")
+            key=key2
+
+            steps += 1
+            pos += 1
+            if pos == len(dirs):
+                pos=0
+
+        print(f"Day {day}, part1: {steps}")
+
+    def test_part_2(self):
+        day =8
+        map = {}
+        file = self.readfile(day)
+        for i, line in enumerate(file):
+            if '=' in line:
+                node_def = line.split("=")
+                start = node_def[0].strip()
+                d = node_def[1].strip()[1:-1]
+                lr = d.split(",")
+                left = lr[0].strip()
+                right = lr[1].strip()
+                map[start] = (left, right, i)
+            elif len(line) != 0:
+                dirs = list(line)
+                #print(f"dirs: {dirs}")
+
+        start_keys = []
+        for k in map.keys():
+            if list(k)[2] == 'A':
+                start_keys.append(k)
+        print("start_keys: ", start_keys)
+
+        steps = 0
+        pos = 0
+        #print(dirs)
+        used_rules = set()
+        while not all_z(start_keys):
+            dir = dirs[pos]
+            #print(f"{dir}:{start_keys}")
+
+            new_keys = []
+            rules = ""
+            for k in start_keys:
+                if dir == 'L':
+                    key2 = map[k][0]
+                else:
+                    key2 = map[k][1]
+                new_keys.append(key2)
+                rules += "-"+str(map[k][2])
+
+            if rules in used_rules:
+                print("Loop: ", used_rules)
+                exit(1)
+            used_rules.add(rules)
+
+            #print(f"{dir}+{start_keys} => {new_keys} rules {rules}")
+            start_keys = new_keys
+            steps += 1
+            pos += 1
+            if pos == len(dirs):
+                pos=0
+                #print("-------- wrap of dirs")
+
+        print(f"Day {day}, part2: {steps}")
+
+def all_z(keys):
+    for k in keys:
+        if k[2] != 'Z':
+            return False
+    return True
 
 if __name__ == '__main__':
     unittest.main()
