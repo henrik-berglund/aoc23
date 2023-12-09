@@ -28,12 +28,15 @@ class TestAoc(unittest.TestCase):
 
     def test_part_1(self):
         day =9
-        part1_res = 0
+        lines = []
         file = self.readfile(day)
         for line in file:
+            strs = line.split(' ')
+            nums = [int(n) for n in strs]
+            print(nums)
             pass
 
-        print(f"Day {day}, part1: {part1_res}")
+        #print(f"Day {day}, part1: {part1_res}")
 
 
 if __name__ == '__main__':
