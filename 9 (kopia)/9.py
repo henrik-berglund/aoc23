@@ -20,7 +20,7 @@ class TestAoc(unittest.TestCase):
         lines = []
         with open(file_name, mode='r', encoding='utf-8') as f:
             while (line := f.readline()):
-                lines.append(line)
+                lines.append(line.strip())
         return lines
 
     def test_util(self):

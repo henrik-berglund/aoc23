@@ -26,7 +26,7 @@ class TestAoc(unittest.TestCase):
     def test_util(self):
         verify("hej", self.reporter)
 
-    def _test_part_1(self):
+    def test_part_1(self):
         day =8
         map = {}
         file = self.readfile(day)
@@ -41,7 +41,7 @@ class TestAoc(unittest.TestCase):
                 map[start] = (left, right, i)
             elif len(line) != 0:
                 dirs = list(line)
-                print(f"dirs: {dirs}")
+                print(f"dirs ({len(dirs)}): {dirs}")
 
         key = 'AAA'
         steps = 0
@@ -54,7 +54,7 @@ class TestAoc(unittest.TestCase):
                 key2 = map[key][0]
             else:
                 key2 = map[key][1]
-            print(f"{key}+{dir} => {key2}")
+            #print(f"{key}+{dir} => {key2}")
             key=key2
 
             steps += 1
@@ -64,7 +64,7 @@ class TestAoc(unittest.TestCase):
 
         print(f"Day {day}, part1: {steps}")
 
-    def test_part_2(self):
+    def _test_part_2(self):
         day =8
         map = {}
         file = self.readfile(day)
@@ -120,8 +120,64 @@ class TestAoc(unittest.TestCase):
 
         print(f"Day {day}, part2: {steps}")
 
+    def _test_part_3(self):
+        day = 8
+        map = {}
+        file = self.readfile(day)
+        for i, line in enumerate(file):
+            if '=' in line:
+                node_def = line.split("=")
+                start = node_def[0].strip()
+                d = node_def[1].strip()[1:-1]
+                lr = d.split(",")
+                left = lr[0].strip()
+                right = lr[1].strip()
+                map[start] = (left, right, i)
+            elif len(line) != 0:
+                dirs = list(line)
+                #print(f"dirs: {dirs}")
+
+        start_keys = []
+        for k in map.keys():
+            if list(k)[2] == 'A':
+                start_keys.append(k)
+        print("start_keys: ", start_keys)
+
+        steps = 0
+        pos = 0
+        loop = 0
+        #print(dirs)
+        while not all_z(start_keys):
+
+            dir = dirs[pos]
+
+            new_keys = []
+            rules = ""
+            for k in start_keys:
+                if dir == 'L':
+                    key2 = map[k][0]
+                else:
+                    key2 = map[k][1]
+                new_keys.append(key2)
+
+            if new_keys[5][2] == 'Z':
+                print(f"{loop}.{pos} {new_keys}")
+
+
+            #print(f"{dir}+{start_keys} => {new_keys} rules {rules}")
+            start_keys = new_keys
+            steps += 1
+            pos += 1
+            if pos == len(dirs):
+                pos=0
+                loop += 1
+                #print("-------- wrap of dirs")
+
+        print(f"Day {day}, part2: {steps}")
+
 def all_z(keys):
     for k in keys:
+
         if k[2] != 'Z':
             return False
     return True

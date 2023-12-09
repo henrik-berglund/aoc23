@@ -1,0 +1,67 @@
+263 per rad
+
+56787204940.262 är en lösn
+
+56 787 204 941 * 263
+14 935 034 899 483
+
+
+52.262 ['KDZ', 'VGL', 'DSL', 'TLM', 'QCR', 'HGR']
+105.262 ['KDZ',  'MTH', 'GBD', 'VPQ', 'RJX', 'DKP']
+158.262 ['KDZ', 'GVM', 'HNC', 'THC', 'HRD', 'HXF']
+211.262 ['KDZ', 'KHH', 'QFM', 'SCX', 'TFJ', 'QXR']
+= +53
+-52/53
+
+66.262 ['DMS', 'XQZ', 'CPK', 'QRM', 'VNL', 'JNN']
+133.262 ['XGL', 'XQZ', 'DVM', 'VJM', 'XPH', 'JBS']
+200.262 ['QDL', 'XQZ', 'SRP', 'MGC', 'SFL', 'DHT']
+267.262 ['CGM', 'XQZ', 'VTG', 'HDJ', 'NRR', 'SRQ']
+334.262 ['RJC', 'XQZ', 'FLC', 'GPP', 'QCR', 'LGS']
+401.262 ['VCM', 'XQZ', 'RMR', 'DGH', 'QPR', 'FDF']
+= +67
+
+
+72.262 ['PNC', 'VMT', 'LKZ', 'FNK', 'QPR', 'GHP']
+145.262 ['GQD', 'HKT', 'LKZ', 'NMG', 'BMF', 'JNN']
+218.262 ['XXB', 'KXR', 'LKZ', 'TXR', 'SGR', 'DGV']
+291.262 ['JHM', 'SJC', 'LKZ', 'RJV', 'CCL', 'JBS']
+
+3: +73
+
+
+58.262 ['RTT', 'GBG', 'NXX', 'ZZZ', 'RJX', 'TCG']
+117.262 ['VBT', 'RQF', 'TMS', 'ZZZ', 'TFJ', 'LSN']
+176.262 ['GRJ', 'LQL', 'BXT', 'ZZZ', 'CDL', 'LGS']
+235.262 ['JVM', 'FHH', 'NNC', 'ZZZ', 'LXH', 'PCS']
+294.262 ['KMR', 'TVR', 'RVG', 'ZZZ', 'SFL', 'JSQ']
+353.262 ['SMJ', 'RBV', 'CBJ', 'ZZZ', 'VBX', 'TVB']
+4: +59
+
+
+46.262 ['GFG', 'XXJ', 'JXB', 'VPQ', 'NTZ', 'BXD']
+93.262 ['QJP', 'TVR', 'VTD', 'SCX', 'NTZ', 'FSJ']
+140.262 ['HMN', 'DNP', 'HFB', 'DNM', 'NTZ', 'NGD']
+187.262 ['GCM', 'NLK', 'LLH', 'HMG', 'NTZ', 'BPR']
+234.262 ['FJQ', 'XHH', 'VCV', 'KRG', 'NTZ', 'KHD']
+281.262 ['RJC', 'JGX', 'CGS', 'PLF', 'NTZ', 'TXL']
+5: + 47
+
+
+78.262 ['RCL', 'HKT', 'FMG', 'MQS', 'NMJ', 'XBZ']
+157.262 ['RMH', 'SJC', 'VDR', 'GPP', 'BKQ', 'XBZ']
+236.262 ['QHQ', 'GKJ', 'PHX', 'LHD', 'MSQ', 'XBZ']
+315.262 ['TMG', 'PDL', 'PVJ', 'TSN', 'PKN', 'XBZ']
+394.262 ['JVM', 'JTQ', 'HXG', 'THC', 'KJG', 'XBZ']
+
+6 +79
+
+ c1 = (i-52) % 53 == 0
+    c2 = (i-66) % 67 == 0
+    c3 = (i-72) % 73 == 0
+    c4 = (i-58) % 59 == 0
+    c5 = (i-46) % 47 == 0
+    c6 = (i-78) % 79 == 0
+
+(i - 52)/53 = n1*53
+67 * n2 -
