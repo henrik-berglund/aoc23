@@ -46,16 +46,17 @@ def add_neighbors(grid, to_visit, visited_nodes, x, y, dist):
         ((0,1),  ['|', 'L', 'J' ] )]
 
     for m in moves:
-        offset, chars = m
+        offset, valid_connects = m
         new_x = x + offset[0]
         new_y = y + offset[1]
 
         if new_x > 0 and new_y > 0 and new_x < len(grid[0]) and new_y < len(grid):
+            c = grid[y][x]
             new_dist = dist+1
-            if not key(new_x, new_y) in visited_nodes:
+            if c in valid_connects and not key(new_x, new_y) in visited_nodes:
                 to_visit.append((new_x,new_y, new_dist))
 
-    
+
 def key(x,y):
     return str(x) + "-" + str(y)
 
