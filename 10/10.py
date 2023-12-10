@@ -19,18 +19,18 @@ def part1():
     for y, line in enumerate(grid):
         for x, c in enumerate(line):
             if c == 'S':
-                break
+                s_x = x
+                s_y = y
 
-    print(key(x,y))
+    print(key(s_x,s_y))
 
     to_visit = []
-    visited_nodes = []
-    dist = {}
+    visited_nodes = {}
     visited_nodes[key(x, y)] = 0
 
-    add_neighbors( to_visit,  visited_nodes, x, y, 0)
+    add_neighbors( to_visit, visited_nodes, s_x, s_y, 0)
 
-def add_neighbors(to_visit, visited_nodes, x, y, 0):
+def add_neighbors(to_visit, visited_nodes, x, y, dist):
     pass
 
 
