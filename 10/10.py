@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from shapely.geometry import Point, Polygon
 
 def readfile( day):
     file_name = f"input_{day}.txt"
@@ -67,10 +68,101 @@ def part1():
                             max_dist = dist + 1
 
     print("Max dist ", max_dist)
-    count_inside(grid, visited_nodes)
+    #count_inside(grid, visited_nodes)
 
     plot(grid, visited_nodes)
 
+def part2():
+    lines = readfile(10)
+    grid = []
+    for line in lines:
+        grid.append(list(line))
+        pass
+
+    for y, line in enumerate(grid):
+        print(line)
+
+    for y, line in enumerate(grid):
+        for x, c in enumerate(line):
+            if c == 'S':
+                s_x = x
+                s_y = y
+
+    print(key(s_x,s_y))
+
+    new_to_visit = []
+    visited_nodes = {}
+    visited_nodes[key(s_x, s_y)] = 0
+
+    connects_to_left = ['-', 'J', '7', 'S']
+    connects_to_right = ['-', 'L', 'F', 'S' ]
+    connects_up = ['|', 'L', 'J', 'S' ]
+    connects_down = ['|', 'F', '7', 'S']
+
+    node = (s_x, s_y)
+
+    moves = [
+        ((-1,0), connects_to_right, connects_to_left),
+        ((1,0),  connects_to_left, connects_to_right),
+        ((0,-1), connects_down, connects_up),
+        ((0,1),   connects_up, connects_down)]
+
+    dist=0
+    path = []
+    visited = [key(s_x, s_y)]
+    done = False
+    while not done:
+        x, y = node
+        path.append(node)
+        print("Checking: ", node)
+        if node == (11,4):
+            log = True
+        else:
+            log = False
+
+        c_this_node = grid[y][x]
+
+        if log:
+            print("c_this_node", c_this_node)
+
+        for m in moves:
+            offset, valid_connects, outgoing_valid_connects = m
+            new_x = x + offset[0]
+            new_y = y + offset[1]
+
+            if new_x >= 0 and new_y >= 0 and new_x < len(grid[0]) and new_y < len(grid):
+                if log:
+                    print(f"   {new_x}{new_y}")
+
+                c = grid[new_y][new_x]
+                if c in valid_connects and c_this_node in outgoing_valid_connects :
+                    if new_x == s_x and new_y == s_y and dist > 5:
+                        print("done")
+                        done = True
+                        break
+                    elif not key(new_x,new_y) in visited:
+                        node = (new_x,new_y)
+                        visited.append(key(x,y))
+                        dist += 1
+
+    print(path)
+
+    poly = Polygon(path)
+    plot_polygon(poly)
+    #count_inside(grid, visited_nodes)
+
+def plot_polygon(polygon):
+    x, y = polygon.exterior.xy
+
+    # Plotting
+    plt.figure()
+    plt.plot(x, y)
+    plt.fill(x, y, alpha=0.3)  # Optional: fill the polygon with a semi-transparent color
+    plt.title("Polygon Plot")
+    plt.xlabel("X-axis")
+    plt.ylabel("Y-axis")
+    plt.grid(True)
+    plt.show()
 
 def count_inside(grid, visited_nodes):
     x_range = range(0, len(grid[0]))
@@ -182,4 +274,4 @@ def plot(grid, visited):
 
 
 
-part1()
+part2()
