@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from shapely.geometry import Point, Polygon
+from matplotlib.path import Path
 
 def readfile( day):
     file_name = f"input_{day}.txt"
@@ -148,7 +149,22 @@ def part2():
     print(path)
 
     poly = Polygon(path)
+
+    x_range = range(0, len(grid[0]))
+    y_range = range(0, len(grid))
+
+    count = 0
+    for y in y_range:
+        for x in x_range:
+            if not key(x, y) in visited_nodes:
+                point = Point(x, y)
+                inside = point.within(poly)
+                if inside:
+                    count += 1
+
     plot_polygon(poly)
+
+    print("Inside: ", count)
     #count_inside(grid, visited_nodes)
 
 def plot_polygon(polygon):
