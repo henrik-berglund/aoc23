@@ -47,7 +47,6 @@ def part1():
             node = to_visit.pop(0)
             x, y = node
             visited_nodes[key(x, y)] = dist
-            print("top loop: ", "10-8" in visited_nodes)
 
             #print(f"dist {dist} checking {x},{y}")
             for m in moves:
@@ -62,7 +61,6 @@ def part1():
                     if c in valid_connects:
                         if not key(new_x, new_y) in visited_nodes:
                             new_to_visit.append((new_x,new_y))
-                            print(f"***added {new_x}-{new_y} from {x},{y}")
                             max_dist = dist + 1
 
                         #print(f"---added {new_x},{new_y}")
@@ -129,7 +127,6 @@ def plot(grid, visited):
     # Check each point in the grid
     for x in x_range:
         for y in y_range:
-            print(f"{key(x,y)} {key(x,y) in visited}")
             if key(x,y) in visited:
                 loop_points_x.append(x)
                 loop_points_y.append(y)
