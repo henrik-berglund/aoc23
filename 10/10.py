@@ -66,8 +66,6 @@ def part1():
                             max_dist = dist + 1
 
                         #print(f"---added {new_x},{new_y}")
-    print("what3: ", "10-8" in visited_nodes)
-    print(visited_nodes.keys())
 
     for y, line in enumerate(grid):
         for x, c in enumerate(line):
@@ -79,7 +77,6 @@ def part1():
 
     print("Max dist ", max_dist)
 
-    print("what2: ", "10-8" in visited_nodes)
 
     for y, line in enumerate(grid):
         for x, c in enumerate(line):
@@ -90,7 +87,6 @@ def part1():
                 print(f"{c:3}", end="")
         print()
 
-    print("what1: ", "10-8" in visited_nodes)
     plot(grid, visited_nodes)
 
 def count(x, y, visited, grid):
