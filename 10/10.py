@@ -54,13 +54,10 @@ def part1():
             c_this_node = grid[y][x]
             visited_nodes[key(x, y)] = dist
 
-            #print(f"dist {dist} checking {x},{y}")
             for m in moves:
                 offset, valid_connects, outgoing_valid_connects = m
                 new_x = x + offset[0]
                 new_y = y + offset[1]
-
-                #print(f"---about to check {new_x},{new_y}")
 
                 if new_x >= 0 and new_y >= 0 and new_x < len(grid[0]) and new_y < len(grid):
                     c = grid[new_y][new_x]
@@ -69,18 +66,51 @@ def part1():
                             new_to_visit.append((new_x,new_y))
                             max_dist = dist + 1
 
-                        #print(f"---added {new_x}-{new_y} from {x},{y}")
-
-
     print("Max dist ", max_dist)
-
+    count_inside(grid, visited_nodes)
 
     plot(grid, visited_nodes)
 
 
+def count_inside(grid, visited_nodes):
+    x_range = range(0, len(grid[0]))
+    y_range = range(0, len(grid))
+
+    print("---- fill")
+    count =0
+    for y in y_range:
+        for x in x_range:
+            if not key(x,y) in visited_nodes:
+                if not can_reach_edge(x, y, grid, visited_nodes, []):
+                    print(" I ", end="")
+                    count += 1
+                else:
+                    print(f" {grid[y][x]} ", end="")
+            else:
+                print(f" {grid[y][x]} ", end="")
+
+        print()
+
+    print("10.2 Inside count: ", count )
+
+def can_reach_edge(x, y, grid, loop, visited):
+    if x== 0 or x == len(grid[0])-1 or y == 0 or y == len(grid):
+        return True
+    else:
+        for dx in [-1, 0, 1]:
+            for dy in [-1, 0, 1]:
+                new_x = x+dx
+                new_y = y+dy
+                new_key = key(new_x, new_y)
+                if not new_key in loop and not new_key in visited:
+                    if can_reach_edge(new_x, new_y, grid, loop, visited + [new_key]):
+                        return True
+    return False
+
+
+
 
 def count(x, y, visited, grid):
-
     count =0
     for mx in range(x+1, len(grid[0])):
         if key(mx, y) in visited:
