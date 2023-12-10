@@ -24,20 +24,10 @@ def part1():
 
     print(key(s_x,s_y))
 
-    to_visit = []
+    new_to_visit = []
     visited_nodes = {}
     visited_nodes[key(x, y)] = 0
-
-    add_neighbors( grid, to_visit, visited_nodes, s_x, s_y, 0)
-
-#| is a vertical pipe connecting north and south.
-#- is a horizontal pipe connecting east and west.
-#L is a 90-degree bend connecting north and east.
-#J is a 90-degree bend connecting north and west.
-#7 is a 90-degree bend connecting south and west.
-#F is a 90-degree bend connecting south and east.
-#. is ground; there is no pipe in this tile.
-def add_neighbors(grid, to_visit, visited_nodes, x, y, dist):
+    new_to_visit.append((s_x, s_y))
 
     moves = [
         ((-1,0), ['-', 'L', 'F' ]),
@@ -45,17 +35,34 @@ def add_neighbors(grid, to_visit, visited_nodes, x, y, dist):
         ((0,-1), ['|', 'F', '7']),
         ((0,1),  ['|', 'L', 'J' ] )]
 
-    for m in moves:
-        offset, valid_connects = m
-        new_x = x + offset[0]
-        new_y = y + offset[1]
+    dist=-1
+    while len(new_to_visit) > 0:
+        to_visit = new_to_visit
+        new_to_visit = []
+        dist += 1
+        while len(to_visit)> 0:
+            node = to_visit.pop(0)
+            x, y = node
+            visited_nodes[key(x, y)] = dist
 
-        if new_x > 0 and new_y > 0 and new_x < len(grid[0]) and new_y < len(grid):
-            c = grid[y][x]
-            new_dist = dist+1
-            if c in valid_connects and not key(new_x, new_y) in visited_nodes:
-                to_visit.append((new_x,new_y, new_dist))
+            for m in moves:
+                offset, valid_connects = m
+                new_x = x + offset[0]
+                new_y = y + offset[1]
 
+                if new_x > 0 and new_y > 0 and new_x < len(grid[0]) and new_y < len(grid):
+                    c = grid[y][x]
+                    new_dist = dist+1
+                    if c in valid_connects and not key(new_x, new_y) in visited_nodes:
+                        new_to_visit.append((new_x,new_y, new_dist))
+
+    for y, line in enumerate(grid):
+        for x, c in enumerate(line):
+            if key(x,y) in visited_nodes:
+                print(visited_nodes[key(x,y)], end="")
+            else:
+                print(".", end="")
+        print()
 
 def key(x,y):
     return str(x) + "-" + str(y)
