@@ -36,6 +36,7 @@ def part1():
         ((0,1),  ['|', 'L', 'J' ] )]
 
     dist=-1
+    max_dist=0
     while len(new_to_visit) > 0:
         to_visit = new_to_visit
         new_to_visit = []
@@ -44,26 +45,32 @@ def part1():
             node = to_visit.pop(0)
             x, y = node
             visited_nodes[key(x, y)] = dist
-
+            #print(f"dist {dist} checking {x},{y}")
             for m in moves:
                 offset, valid_connects = m
                 new_x = x + offset[0]
                 new_y = y + offset[1]
 
-                if new_x > 0 and new_y > 0 and new_x < len(grid[0]) and new_y < len(grid):
-                    c = grid[y][x]
-                    new_dist = dist+1
-                    if c in valid_connects and not key(new_x, new_y) in visited_nodes:
-                        new_to_visit.append((new_x,new_y, new_dist))
+                #print(f"---about to check {new_x},{new_y}")
+
+                if new_x >= 0 and new_y >= 0 and new_x < len(grid[0]) and new_y < len(grid):
+                    c = grid[new_y][new_x]
+                    if c in valid_connects:
+                        if not key(new_x, new_y) in visited_nodes:
+                            new_to_visit.append((new_x,new_y))
+                            max_dist = dist + 1
+
+                        #print(f"---added {new_x},{new_y}")
 
     for y, line in enumerate(grid):
         for x, c in enumerate(line):
             if key(x,y) in visited_nodes:
-                print(visited_nodes[key(x,y)], end="")
+                print(visited_nodes[key(x,y)], " ", end="")
             else:
-                print(".", end="")
+                print(". ", end="")
         print()
 
+    print("Max dist ", max_dist)
 def key(x,y):
     return str(x) + "-" + str(y)
 
