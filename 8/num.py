@@ -5,8 +5,8 @@ def test1():
     i = 0
 
     while True:
-        c1 = (i-52) % 53 == 0
-        c2 = (i-66) % 67 == 0
+        c1 = (i-52) % 53 == 0 #93
+        c2 = (i-66) % 67 == 0 # 52
         c3 = (i-72) % 73 == 0
         c4 = (i-58) % 59 == 0
         c5 = (i-46) % 47 == 0
@@ -25,7 +25,7 @@ def test2():
     series = [set(), set(), set(), set(), set(), set()]
     for i, sc in enumerate(schema):
         scount=0
-        for multiple in range(1000000000):
+        for multiple in range(1000000000000):
             new_num = schema[i]+ (schema[i]+1)*multiple
             if i == 0:
                 series[i].add(new_num)
@@ -48,8 +48,9 @@ def generator(schema):
         yield num
 
 
-def test3():
-    schema = sorted([52, 66, 72, 58, 46, 78])
+def test3(): # found:  [56787204940
+
+    schema = [52, 66, 72, 58, 46, 78]
 
     gs = []
     for i in schema:
@@ -59,15 +60,25 @@ def test3():
     for i, g in enumerate(gs):
         state.append(next(g))
 
-    num = state[0]
+    loops =0
+    ping_interval = 15000000
+    next_ping = loops + ping_interval
     while True:
         found = True
-        for sc in range(2):
+        state[0] = next(gs[0])
+        num = state[0]
+
+        if loops > next_ping:
+            print(".", end="", flush=True)
+            next_ping = loops + ping_interval
+        loops += 1
+
+        for sc in range(1,6):
             if num == state[sc]:
-                print(f"ok: {sc} {state}" )
+                #print(f"ok: {sc} {state}" )
                 pass # all good so far
             elif num < state[sc]:
-                print(f"nok: {sc} {state}" )
+                #print(f"nok: {sc} {state}" )
                 found = False
                 break
             else:
@@ -75,12 +86,14 @@ def test3():
                     state[sc] = next(gs[sc])
                 if num != state[sc]:
                     found = False
-                    print(f"nok2: {sc} {state}")
+                    #print(f"nok2: {sc} {state}")
                     break
-                print(f"ok2: {sc} {state}" )
+                #print(f"ok2: {sc} {state}" )
 
         if found:
             print("found: ", state)
 
 test3()
-
+#g = generator(52)
+#for i in range(7):
+#    print(next(g))

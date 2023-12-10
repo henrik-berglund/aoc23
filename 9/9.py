@@ -26,7 +26,7 @@ class TestAoc(unittest.TestCase):
     def test_util(self):
         verify("hej", self.reporter)
 
-    def test_part_1(self):
+    def _test_part_1(self):
         day =9
         in_nums = []
         file = self.readfile(day)
@@ -54,7 +54,7 @@ class TestAoc(unittest.TestCase):
             sum_1 += pred
             print("pred: ", pred)
 
-        print("Res: ", sum_1)
+        print("Res part 1: ", sum_1)
 
     def predict(self, seq):
         print("predict-----")
@@ -68,8 +68,20 @@ class TestAoc(unittest.TestCase):
             i -= 1
             print(s)
 
+    def predict_2(self, seq):
+        print("predict 2 -----")
+        i = len(seq)-1
+        prev_first=0
+        while  i>= 0:
+            s = seq[i]
+            first = s[0]
+            s.insert(0, first - prev_first)
+            prev_first = s[0]
+            i -= 1
+            print(s)
+
     #fel Res:  1757008038
-    
+
 
     def new_seq(self,seq):
         s = []
@@ -79,6 +91,35 @@ class TestAoc(unittest.TestCase):
 
         #print(f"Day {day}, part1: {part1_res}")
 
+    def test_part_2(self):
+        day =9
+        in_nums = []
+        file = self.readfile(day)
+        for line in file:
+            strs = line.split(' ')
+            nums = [int(n) for n in strs]
+            in_nums.append(nums)
+            pass
+
+        sum_1 = 0
+        for n in in_nums:
+            print("-------")
+            print("line: ", n)
+            seq = []
+            seq.append(n)
+            while not all_zero(seq[-1]):
+                new = self.new_seq(seq[-1])
+                seq.append(new)
+
+            for s in seq:
+                print(s)
+            self.predict_2(seq)
+
+            pred = seq[0][0]
+            sum_1 += pred
+            print("pred: ", pred)
+
+        print("Res part 2: ", sum_1)
 
 def all_zero(s):
     for i in s:
