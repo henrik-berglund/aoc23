@@ -35,7 +35,14 @@ def part1():
             ll.insert(c,'.')
         lines.append(ll)
 
-    for l in lines:
-        print(l)
+    coords = []
+    for y, l in enumerate(lines):
+        for x, c in enumerate(l):
+            if c == '#':
+                coords.append((x,y))
+
+    for c in coords:
+        print(c)
+
 
 part1()
