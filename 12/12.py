@@ -18,21 +18,22 @@ def part1():
     cparts = []
     for p in parts:
         line = []
-        dcount =0
+        count = 0
+        last = None
         for c in p[0]:
-            if c == '#':
-                dcount += 1
-            elif dcount != 0:
-                line.append(('d', dcount))
-                dcount=0
-
-                line.append(c)
+            if last and c == last:
+                count += 1
+            elif last and c != last:
+                line.append((last, count))
+                count = 1
+                last = c
             else:
-                line.append(c)
+                last = c
+                count = 1
 
-        if dcount != 0:
-            line.append(('d', dcount))
-            dcount = 0
+        if count != 0:
+            line.append((last, count))
+            count = 0
 
         cparts.append(line)
 
