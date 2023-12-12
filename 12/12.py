@@ -35,7 +35,7 @@ def part1():
             line.append((last, count))
             count = 0
 
-        cparts.append(line)
+        cparts.append((line, p[1]))
 
 
         for i, p in enumerate(cparts):
