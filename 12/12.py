@@ -7,8 +7,16 @@ def readfile( day):
     return lines
 
 def part1():
-    lines = readfile(10)
+    lines = readfile(12)
+    parts = []
     for line in lines:
-        pass
+        p, c = line.split(" ")
+        c = c.split(",")
+        counts = [int(n) for n in c]
+        parts.append((p,counts))
+
+    for p in parts:
+        print(p)
+
 
 part1()

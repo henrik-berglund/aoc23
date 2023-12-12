@@ -69,6 +69,7 @@ def part2():
             y_add.append(y)
     print(y_add)
 
+    to_add = 999999
     c2 = []
     for c in coords:
         x,y = c
@@ -76,8 +77,43 @@ def part2():
         for ya in y_add:
             if y > ya:
                 a+= 1
-        c2.append((x, y+a))
+        c2.append((x, y+a*to_add))
 
-    print(c2)
+    print()
+    print("c2: ", c2)
+
+    x_add = []
+    for x in range(len(lines[0])):
+        ext = True
+        for y, l in enumerate(lines):
+            if l[x] == '#':
+                ext = False
+        if ext:
+            x_add.append(x)
+
+    print("xa", x_add)
+
+    c3 = []
+    for c in c2:
+        x,y = c
+        a = 0
+        for xa in x_add:
+            if x > xa:
+                a+= 1
+        c3.append((x+a*to_add, y))
+    print(c3)
+
+    coords = c3
+    sum = 0
+    for i, c1 in enumerate(coords):
+        for c2 in coords[i+1:]:
+            xd = abs(c1[0]-c2[0])
+            yd = abs(c1[1]-c2[1])
+            dist = xd+yd
+            sum += dist
+            print(f"From {c1} to {c2} = {xd} {yd}")
+
+    print("Part 2", sum)
+
 
 part2()
