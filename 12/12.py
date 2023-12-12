@@ -6,15 +6,21 @@ def readfile( day):
             lines.append(line.strip())
     return lines
 
+
 def part1():
     lines = readfile(12)
     parts = []
+    maxq = 0
     for line in lines:
         p, c = line.split(" ")
+        print(p)
+        qcount = p.count("?")
+        if maxq < qcount:
+            maxq = qcount
         c = c.split(",")
         counts = [int(n) for n in c]
         parts.append((p,counts))
-
+    print("Max q: ", maxq)
     cparts = []
     for p in parts:
         line = []
@@ -39,7 +45,11 @@ def part1():
 
 
         for i, p in enumerate(cparts):
-            print(f"{lines[i]}\n***{p}\n")
+            print(f"{lines[i]}")
 
+            parts = p[0]
+            counts = p[1]
+            print("parts: ", parts)
+            print(f"counts: {counts}\n")
 
 part1()
