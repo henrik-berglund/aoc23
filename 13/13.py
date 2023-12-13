@@ -17,28 +17,44 @@ def part1():
         else:
             grid.append(line)
 
-    if len(grid) > 0
+    if len(grid) > 0:
         process(grid)
 
-def process(grid):
-    print("-----")
-    line = grid[0]
-
+def line_points(line):
+    xpoints = []
     for x in range (1, len(line)-2):
         match = x
         for diff in range(len(line)):
-            lx = x-diff
+            lx = x+1-(diff)
             rx = x+diff
             if lx >= 0 and rx < len(line) :
-                if line(lx) != line(rx):
+                if line[lx] != line[rx]:
                     match=None
         if match:
-            break
+            xpoints.append(match)
+
+    return xpoints
+
+def process(grid):
+    print("-----")
 
     for g in grid:
         print(g)
-    print("X: ", match)
-    return match
 
+    lp = []
+    for g in grid:
+        lp.append(line_points(g))
+        print("X: ", line_points(g) )
+
+    s = set(lp[0])
+    for x in lp:
+        i = s.intersection(x)
+        s = i
+    print(s)
+    res = None
+    if len(s) >0:
+        res =  list(s)[0]
+    print (res)
+    return res
 
 part1()
