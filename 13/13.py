@@ -23,54 +23,110 @@ def part1():
     sum = 0
     for line in lines:
         if len(line) == 0:
-            sum += process(grid, 1)
-            sum += process(flip(grid), 100)
 
+            s1 = process(grid, 1)
+            s2  = process(flip(grid), 100)
+            if s1 == 0 and s2 == 0 or (s1 > 0 and s2 > 0):
+                print("!!!!! ", s1, s2)
+
+            sum += s1+s2
             grid = []
         else:
             grid.append(list(line))
 
     if len(grid) > 0:
-        sum+= process(grid, 1)
-        sum += process(flip(grid), 100)
+        s1 = process(grid, 1)
+        s2 = process(flip(grid), 100)
+        if s1 == 0 and s2 == 0 or (s1 > 0 and s2 > 0):
+            print("!!!!! ", s1, s2)
+
+        sum += s1 + s2
 
     print("Res 1: ", sum)
-def line_points(line):
+
+
+def part2():
+    lines = readfile(13)
+    grid = []
+    sum = 0
+    for line in lines:
+        if len(line) == 0:
+
+            s1 = process(grid, 1)
+            s2 = process(flip(grid), 100)
+            if s1 == 0 and s2 == 0 or (s1 > 0 and s2 > 0):
+                print("!!!!! ", s1, s2)
+
+            sum += s1 + s2
+            grid = []
+        else:
+            grid.append(list(line))
+
+    if len(grid) > 0:
+        s1 = process(grid, 1)
+        s2 = process(flip(grid), 100)
+        if s1 == 0 and s2 == 0 or (s1 > 0 and s2 > 0):
+            print("!!!!! ", s1, s2)
+
+        sum += s1 + s2
+
+    print("Res 1: ", sum)
+def line_points(line, no):
     xpoints = []
+    print(f"\nChecking {no}", line)
 
-    for x in range (1, len(line)-2):
-        match = x
-        for diff in range(len(line)):
-            lx = x+1-(diff)
-            rx = x+diff
-            if lx >= 0 and rx < len(line) :
-                if line[lx] != line[rx]:
-                    match=None
+    for x in range (1, len(line)):
+        s1 = line[0:x]
+        s2 = line[x:]
+        s1 = list(reversed(s1))
+        print(f"-- {x} s1r: {s1}\n-- s2: {s2}")
+
+        match=True
+        index = 0
+        while index < len(s1) and index < len(s2):
+            if s1[index] != s2[index]:
+                match=False
+                break
+            index+=1
+
         if match:
-            xpoints.append(match)
-
+            xpoints.append(x)
+    print("==>", xpoints)
     return xpoints
 
 def process(grid, mult):
-    print("-----")
+    if mult == 1:
+        print("---- Horizontal")
+    else:
+        print("---- Vertical")
 
     for g in grid:
         print(g)
 
     lp = []
-    for g in grid:
-        lp.append(line_points(g))
-        print("X: ", line_points(g) )
+    for i, g in enumerate(grid):
+        lpg = line_points(g, i)
+        lp.append(lpg)
+        print("X: ", lp )
 
     s = set(lp[0])
     for x in lp:
-        i = s.intersection(x)
+        i = s.intersection(set(x))
         s = i
-    print(s)
+    #print(s)
     res = 0
     if len(s) >0:
-        res =  list(s)[0]+1
-    print (res)
+        res =  list(s)[0]
+
+    print (res*mult)
     return res*mult
 
 part1()
+
+lines = []
+lines.append(list("123"))
+lines.append(list("456"))
+
+f = flip(lines)
+for l in f:
+    print(l)
