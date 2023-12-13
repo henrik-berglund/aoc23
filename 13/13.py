@@ -16,12 +16,29 @@ def part1():
             grid = []
         else:
             grid.append(line)
-    if len(grid) > 0:
+
+    if len(grid) > 0
         process(grid)
 
 def process(grid):
     print("-----")
+    line = grid[0]
+
+    for x in range (1, len(line)-2):
+        match = x
+        for diff in range(len(line)):
+            lx = x-diff
+            rx = x+diff
+            if lx >= 0 and rx < len(line) :
+                if line(lx) != line(rx):
+                    match=None
+        if match:
+            break
+
     for g in grid:
         print(g)
+    print("X: ", match)
+    return match
+
 
 part1()
