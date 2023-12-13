@@ -17,51 +17,67 @@ def flip(grid):
             flipped[x][y] = grid[y][x]
     return flipped
 
-def part1():
-    lines = readfile(13)
-    grid = []
-    sum = 0
-    for line in lines:
-        if len(line) == 0:
-
-            s1 = process(grid, 1)
-            s2  = process(flip(grid), 100)
-            sum += s1+s2
-            grid = []
-        else:
-            grid.append(list(line))
-
-    if len(grid) > 0:
-        s1 = process(grid, 1)
-        s2 = process(flip(grid), 100)
-
-        sum += s1 + s2
-
-    print("Res 1: ", sum)
-
-
 
 def sum1(grid):
     s1 = process(grid, 1)
     s2 = process(flip(grid), 100)
     return s1+s2
 
+def flipc(c):
+    if c == "#":
+        return '.'
+    return '#'
+
+def sum2(grid, i):
+    sumh = process3(grid, 1, i)
+    sumv = process3(flip(grid), 100, i)
+    return sumv + sumh
+
+def process3(grid, mult, i):
+    s1 = process2(grid)
+    print(f"{i} looking for smudge")
+    new_x = 0
+    found = False
+    for y in range(len(grid)):
+        for x in range(len(grid[0])):
+            #print({y},{x},grid[y][x] )
+            grid[y][x] = flipc(grid[y][x])
+
+            s2 = process2(grid)
+            if len(s2) > 1:
+                s2 = s2 - s1
+                new_x = list(s2)[0]
+                found = True
+                break
+            elif len(s2) == 1 and not s1 == s2:
+                new_x = list(s2)[0]
+                found = True
+                break
+            grid[y][x] = flipc(grid[y][x])
+
+            if found:
+                print("- found", new_x, new_x*mult)
+                break
+    return new_x*mult
+
+
 def part2():
     lines = readfile(13)
     grid = []
     sum = 0
+    gridcount=0
     for line in lines:
-        if len(line) == 0:
-            sum1 = sum1(grid)
-            sum2 = sum2(grid)
-            grid = []
-        else:
+        if len(line) != 0:
             grid.append(list(line))
+        else:
+            sum += sum2(grid, gridcount)
+            grid = []
+            gridcount+= 1
 
     if len(grid) > 0:
-        sum += sum1(grid)
+        sum += sum2(grid, gridcount)
 
-    print("Res 1: ", sum)
+    print("Res 2: ", sum)
 def line_points(line, no):
     xpoints = []
     #print(f"\nChecking {no}", line)
@@ -85,7 +101,7 @@ def line_points(line, no):
     #print("==>", xpoints)
     return xpoints
 
-def process(grid, mult):
+def process2(grid):
 
     lp = []
     for i, g in enumerate(grid):
@@ -97,15 +113,8 @@ def process(grid, mult):
     for x in lp:
         i = s.intersection(set(x))
         s = i
-    #print(s)
-    res = 0
-    if len(s) >0:
-        res =  list(s)[0]
+    return s
 
-    #print (res*mult)
-    return res*mult
-
-part1()
 part2()
 
 
