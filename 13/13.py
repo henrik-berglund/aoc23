@@ -26,9 +26,6 @@ def part1():
 
             s1 = process(grid, 1)
             s2  = process(flip(grid), 100)
-            if s1 == 0 and s2 == 0 or (s1 > 0 and s2 > 0):
-                print("!!!!! ", s1, s2)
-
             sum += s1+s2
             grid = []
         else:
@@ -37,13 +34,16 @@ def part1():
     if len(grid) > 0:
         s1 = process(grid, 1)
         s2 = process(flip(grid), 100)
-        if s1 == 0 and s2 == 0 or (s1 > 0 and s2 > 0):
-            print("!!!!! ", s1, s2)
 
         sum += s1 + s2
 
     print("Res 1: ", sum)
 
+
+def sum1(grid):
+    s1 = process(grid, 1)
+    s2 = process(flip(grid), 100)
+    return s1+s2
 
 def part2():
     lines = readfile(13)
@@ -51,35 +51,24 @@ def part2():
     sum = 0
     for line in lines:
         if len(line) == 0:
-
-            s1 = process(grid, 1)
-            s2 = process(flip(grid), 100)
-            if s1 == 0 and s2 == 0 or (s1 > 0 and s2 > 0):
-                print("!!!!! ", s1, s2)
-
-            sum += s1 + s2
+            sum += sum1(grid)
             grid = []
         else:
             grid.append(list(line))
 
     if len(grid) > 0:
-        s1 = process(grid, 1)
-        s2 = process(flip(grid), 100)
-        if s1 == 0 and s2 == 0 or (s1 > 0 and s2 > 0):
-            print("!!!!! ", s1, s2)
-
-        sum += s1 + s2
+        sum += sum1(grid)
 
     print("Res 1: ", sum)
 def line_points(line, no):
     xpoints = []
-    print(f"\nChecking {no}", line)
+    #print(f"\nChecking {no}", line)
 
     for x in range (1, len(line)):
         s1 = line[0:x]
         s2 = line[x:]
         s1 = list(reversed(s1))
-        print(f"-- {x} s1r: {s1}\n-- s2: {s2}")
+        #print(f"-- {x} s1r: {s1}\n-- s2: {s2}")
 
         match=True
         index = 0
@@ -91,23 +80,16 @@ def line_points(line, no):
 
         if match:
             xpoints.append(x)
-    print("==>", xpoints)
+    #print("==>", xpoints)
     return xpoints
 
 def process(grid, mult):
-    if mult == 1:
-        print("---- Horizontal")
-    else:
-        print("---- Vertical")
-
-    for g in grid:
-        print(g)
 
     lp = []
     for i, g in enumerate(grid):
         lpg = line_points(g, i)
         lp.append(lpg)
-        print("X: ", lp )
+        #print("X: ", lp )
 
     s = set(lp[0])
     for x in lp:
@@ -118,15 +100,10 @@ def process(grid, mult):
     if len(s) >0:
         res =  list(s)[0]
 
-    print (res*mult)
+    #print (res*mult)
     return res*mult
 
 part1()
+part2()
 
-lines = []
-lines.append(list("123"))
-lines.append(list("456"))
 
-f = flip(lines)
-for l in f:
-    print(l)
