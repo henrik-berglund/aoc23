@@ -52,4 +52,7 @@ def part1():
             print("parts: ", parts)
             print(f"counts: {counts}\n")
 
+            last = p[-1]
+            last count =
+
 part1()
