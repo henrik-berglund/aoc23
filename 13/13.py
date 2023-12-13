@@ -6,20 +6,33 @@ def readfile( day):
             lines.append(line.strip())
     return lines
 
+def flip(grid):
+    flipped = []
+
+    for x in grid[0]:
+        flipped.append(list(' '*len(grid)))
+
+    for y in range(len(grid)):
+        for x in range(len(grid[y])):
+            flipped[x][y] = grid[y][x]
+    return flipped
 
 def part1():
     lines = readfile(13)
     grid = []
     sum = 0
     for line in lines:
-        if len(line) ==0:
-            sum += process(grid)
+        if len(line) == 0:
+            sum += process(grid, 1)
+            sum += process(flip(grid), 100)
+
             grid = []
         else:
-            grid.append(line)
+            grid.append(list(line))
 
     if len(grid) > 0:
-        sum+= process(grid)
+        sum+= process(grid, 1)
+        sum += process(flip(grid), 100)
 
     print("Res 1: ", sum)
 def line_points(line):
@@ -38,7 +51,7 @@ def line_points(line):
 
     return xpoints
 
-def process(grid):
+def process(grid, mult):
     print("-----")
 
     for g in grid:
@@ -56,8 +69,8 @@ def process(grid):
     print(s)
     res = 0
     if len(s) >0:
-        res =  list(s)[0]
+        res =  list(s)[0]+1
     print (res)
-    return res
+    return res*mult
 
 part1()
