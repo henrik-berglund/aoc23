@@ -40,6 +40,7 @@ def part1():
     print("Res 1: ", sum)
 
 
+
 def sum1(grid):
     s1 = process(grid, 1)
     s2 = process(flip(grid), 100)
@@ -51,7 +52,8 @@ def part2():
     sum = 0
     for line in lines:
         if len(line) == 0:
-            sum += sum1(grid)
+            sum1 = sum1(grid)
+            sum2 = sum2(grid)
             grid = []
         else:
             grid.append(list(line))
