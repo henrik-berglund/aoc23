@@ -10,18 +10,21 @@ def readfile( day):
 def part1():
     lines = readfile(13)
     grid = []
+    sum = 0
     for line in lines:
         if len(line) ==0:
-            process(grid)
+            sum += process(grid)
             grid = []
         else:
             grid.append(line)
 
     if len(grid) > 0:
-        process(grid)
+        sum+= process(grid)
 
+    print("Res 1: ", sum)
 def line_points(line):
     xpoints = []
+
     for x in range (1, len(line)-2):
         match = x
         for diff in range(len(line)):
@@ -51,7 +54,7 @@ def process(grid):
         i = s.intersection(x)
         s = i
     print(s)
-    res = None
+    res = 0
     if len(s) >0:
         res =  list(s)[0]
     print (res)
