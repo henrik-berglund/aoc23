@@ -35,7 +35,7 @@ def sum2(grid, i):
 
 def process3(grid, mult, i):
     s1 = process2(grid)
-    print(f"{i} looking for smudge ({mult})")
+    #print(f"{i} looking for smudge ({mult})")
     new_x = 0
     found = False
     for y in range(len(grid)):
@@ -57,9 +57,9 @@ def process3(grid, mult, i):
 
             grid[y][x] = flipc(grid[y][x])
 
-        if found:
-            print("- found", new_x, new_x*mult)
-            break
+        #if found:
+        #    print("- found", new_x, new_x*mult)
+        #    break
     return new_x*mult
 
 
