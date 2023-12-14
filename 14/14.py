@@ -1,3 +1,4 @@
+import time
 def readfile( day):
     file_name = f"input_{day}.txt"
     lines = []
@@ -30,9 +31,22 @@ def clockw(grid):
 
     return g2
 
+def cycle(grid):
+    dropn(grid) #n
+    grid = clockw(grid)
+    dropn(grid) #w
+    grid = clockw(grid)
+    dropn(grid) #s
+    grid = clockw(grid)
+    dropn(grid) #e
+    grid = clockw(grid)
+
+    return grid
+
 def part1():
     lines = readfile(14)
     grid = []
+
     for line in lines:
         if len(line) != 0:
             grid.append(list(line))
@@ -40,30 +54,25 @@ def part1():
     for line in grid:
         print(line)
 
-    print("------- drop")
     dropn(grid)
-    for line in grid:
-        print(line)
-
-    print("------- clockw")
-    grid = clockw(grid)
-    for line in grid:
-        print(line)
-
-    print("------- drop")
-    dropn(grid)
-    for line in grid:
-        print(line)
-
-
+    print("weight ", weight(grid))
     exit(0)
+    start = time.time()
+    for i in range(100000):
+        grid = cycle(grid)
+    print("time: ", time.time()- start)
+    print("------- cycled")
+    for line in grid:
+        print(line)
+
+
+
+def weight(grid):
     sum = 0
     num = len(grid)
     for line in grid:
         sum+= line.count('O') *num
         print(line, num, line.count('O'))
         num -= 1
-
-    print("Part 14.1: ", sum
-          )
+    return sum
 part1()
