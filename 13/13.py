@@ -35,10 +35,12 @@ def sum2(grid, i):
 
 def process3(grid, mult, i):
     s1 = process2(grid)
-    print(f"{i} looking for smudge")
+    print(f"{i} looking for smudge ({mult})")
     new_x = 0
     found = False
     for y in range(len(grid)):
+        if found:
+            break
         for x in range(len(grid[0])):
             #print({y},{x},grid[y][x] )
             grid[y][x] = flipc(grid[y][x])
@@ -52,12 +54,12 @@ def process3(grid, mult, i):
             elif len(s2) == 1 and not s1 == s2:
                 new_x = list(s2)[0]
                 found = True
-                break
+
             grid[y][x] = flipc(grid[y][x])
 
-            if found:
-                print("- found", new_x, new_x*mult)
-                break
+        if found:
+            print("- found", new_x, new_x*mult)
+            break
     return new_x*mult
 
 
