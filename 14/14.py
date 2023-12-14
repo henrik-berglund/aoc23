@@ -16,6 +16,20 @@ def dropn(grid):
                     grid[dy-1][x] = 'O'
                     dy -= 1
 
+def clockw(grid):
+    g2 = []
+    for l in grid[0]:
+        g2.append(list('Q'*len(grid)))
+    rows_in = len(grid)
+    cols_in = len(grid[0])
+
+    for l in range(rows_in):
+        for c in range(cols_in):
+            #g2[rows_in-1-c][l] = grid[l][c]
+            g2[l][c] = grid[rows_in-1-c][l]
+
+    return g2
+
 def part1():
     lines = readfile(14)
     grid = []
@@ -26,9 +40,16 @@ def part1():
     for line in grid:
         print(line)
 
-    print("-------")
+    print("------- drop")
     dropn(grid)
+    for line in grid:
+        print(line)
 
+    print("------- clockw")
+    grid = clockw(grid)
+    for line in grid:
+        print(line)
+    exit(0)
     sum = 0
     num = len(grid)
     for line in grid:
