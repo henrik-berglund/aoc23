@@ -6,6 +6,16 @@ def readfile( day):
             lines.append(line.strip())
     return lines
 
+def dropn(grid):
+    for x in range(len(grid[0])):
+        for y in range(1,len(grid)):
+            if grid[y][x] == 'O':
+                dy = y
+                while dy > 0 and grid[dy-1][x] == '.':
+                    grid[dy][x] = '.'
+                    grid[dy-1][x] = 'O'
+                    dy -= 1
+
 def part1():
     lines = readfile(14)
     grid = []
@@ -15,15 +25,9 @@ def part1():
 
     for line in grid:
         print(line)
+
     print("-------")
-    for x in range(len(grid[0])):
-        for y in range(1,len(grid)):
-            if grid[y][x] == 'O':
-                dy = y
-                while dy > 0 and grid[dy-1][x] == '.':
-                    grid[dy][x] = '.'
-                    grid[dy-1][x] = 'O'
-                    dy -= 1
+    dropn(grid)
 
     sum = 0
     num = len(grid)
