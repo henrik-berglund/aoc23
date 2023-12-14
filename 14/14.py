@@ -49,6 +49,13 @@ def part1():
     grid = clockw(grid)
     for line in grid:
         print(line)
+
+    print("------- drop")
+    dropn(grid)
+    for line in grid:
+        print(line)
+
+
     exit(0)
     sum = 0
     num = len(grid)
