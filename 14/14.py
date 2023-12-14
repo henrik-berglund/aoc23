@@ -25,8 +25,13 @@ def part1():
                     grid[dy-1][x] = 'O'
                     dy -= 1
 
+    sum = 0
     num = len(grid)
     for line in grid:
-        print(line, num)
+        sum+= line.count('O') *num
+        print(line, num, line.count('O'))
         num -= 1
+
+    print("Part 14.1: ", sum
+          )
 part1()
