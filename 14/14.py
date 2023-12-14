@@ -25,6 +25,8 @@ def part1():
                     grid[dy-1][x] = 'O'
                     dy -= 1
 
+    num = len(grid)
     for line in grid:
-        print(line)
+        print(line, num)
+        num -= 1
 part1()
