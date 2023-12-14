@@ -54,12 +54,11 @@ def part1():
     for line in grid:
         print(line)
 
-    dropn(grid)
-    print("weight ", weight(grid))
-    exit(0)
     start = time.time()
     for i in range(100000):
         grid = cycle(grid)
+        w = weight(grid)
+        print(i, w)
     print("time: ", time.time()- start)
     print("------- cycled")
     for line in grid:
@@ -72,7 +71,7 @@ def weight(grid):
     num = len(grid)
     for line in grid:
         sum+= line.count('O') *num
-        print(line, num, line.count('O'))
+        #print(line, num, line.count('O'))
         num -= 1
     return sum
 part1()
