@@ -1,0 +1,1573 @@
+['.', '|', '.', '.', '.', '\\', '.', '.', '.', '.']
+['|', '.', '-', '.', '\\', '.', '.', '.', '.', '.']
+['.', '.', '.', '.', '.', '|', '-', '.', '.', '.']
+['.', '.', '.', '.', '.', '.', '.', '.', '|', '.']
+['.', '.', '.', '.', '.', '.', '.', '.', '.', '.']
+['.', '.', '.', '.', '.', '.', '.', '.', '.', '\\']
+['.', '.', '.', '.', '/', '.', '\\', '\\', '.', '.']
+['.', '-', '.', '-', '/', '.', '.', '|', '.', '.']
+['.', '|', '.', '.', '.', '.', '-', '|', '.', '\\']
+['.', '.', '/', '/', '.', '|', '.', '.', '.', '.']
+dir (0, 0, 1, 0) meets .
+dir (1, 0, 1, 0) meets |
+2 r1=> (1, -1, 0, -1)
+2 r2=> (1, 1, 0, 1)
+dir (1, 1, 0, 1) meets .
+dir (1, 2, 0, 1) meets .
+dir (1, 3, 0, 1) meets .
+dir (1, 4, 0, 1) meets .
+dir (1, 5, 0, 1) meets .
+dir (1, 6, 0, 1) meets .
+dir (1, 7, 0, 1) meets -
+9 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+9 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+12 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+13 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+15 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+17 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+22 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+23 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+23 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+26 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+27 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+29 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+31 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+36 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+37 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+37 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+40 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+41 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+43 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+45 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+50 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+51 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+51 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+54 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+55 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+57 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+59 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+64 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+65 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+65 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+68 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+69 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+71 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+73 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+78 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+79 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+79 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+82 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+83 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+85 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+87 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+92 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+93 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+93 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+96 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+97 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+99 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+101 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+106 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+107 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+107 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+110 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+111 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+113 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+115 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+120 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+121 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+121 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+124 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+125 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+127 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+129 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+134 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+135 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+135 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+138 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+139 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+141 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+143 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+148 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+149 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+149 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+152 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+153 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+155 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+157 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+162 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+163 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+163 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+166 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+167 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+169 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+171 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+176 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+177 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+177 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+180 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+181 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+183 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+185 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+190 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+191 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+191 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+194 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+195 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+197 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+199 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+204 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+205 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+205 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+208 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+209 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+211 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+213 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+218 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+219 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+219 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+222 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+223 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+225 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+227 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+232 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+233 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+233 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+236 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+237 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+239 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+241 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+246 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+247 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+247 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+250 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+251 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+253 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+255 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+260 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+261 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+261 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+264 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+265 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+267 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+269 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+274 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+275 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+275 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+278 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+279 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+281 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+283 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+288 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+289 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+289 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+292 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+293 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+295 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+297 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+302 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+303 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+303 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+306 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+307 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+309 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+311 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+316 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+317 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+317 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+320 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+321 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+323 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+325 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+330 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+331 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+331 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+334 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+335 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+337 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+339 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+344 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+345 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+345 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+348 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+349 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+351 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+353 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+358 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+359 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+359 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+362 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+363 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+365 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+367 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+372 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+373 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+373 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+376 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+377 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+379 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+381 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+386 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+387 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+387 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+390 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+391 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+393 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+395 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+400 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+401 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+401 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+404 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+405 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+407 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+409 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+414 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+415 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+415 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+418 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+419 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+421 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+423 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+428 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+429 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+429 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+432 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+433 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+435 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+437 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+442 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+443 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+443 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+446 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+447 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+449 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+451 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+456 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+457 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+457 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+460 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+461 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+463 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+465 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+470 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+471 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+471 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+474 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+475 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+477 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+479 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+484 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+485 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+485 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+488 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+489 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+491 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+493 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+498 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+499 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+499 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+502 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+503 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+505 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+507 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+512 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+513 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+513 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+516 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+517 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+519 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+521 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+526 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+527 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+527 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+530 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+531 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+533 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+535 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+540 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+541 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+541 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+544 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+545 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+547 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+549 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+554 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+555 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+555 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+558 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+559 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+561 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+563 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+568 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+569 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+569 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+572 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+573 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+575 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+577 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+582 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+583 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+583 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+586 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+587 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+589 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+591 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+596 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+597 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+597 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+600 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+601 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+603 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+605 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+610 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+611 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+611 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+614 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+615 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+617 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+619 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+624 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+625 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+625 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+628 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+629 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+631 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+633 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+638 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+639 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+639 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+642 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+643 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+645 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+647 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+652 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+653 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+653 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+656 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+657 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+659 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+661 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+666 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+667 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+667 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+670 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+671 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+673 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+675 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+680 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+681 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+681 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+684 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+685 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+687 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+689 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+694 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+695 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+695 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+698 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+699 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+701 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+703 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+708 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+709 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+709 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+712 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+713 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+715 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+717 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+722 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+723 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+723 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+726 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+727 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+729 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+731 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+736 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+737 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+737 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+740 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+741 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+743 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+745 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+750 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+751 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+751 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+754 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+755 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+757 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+759 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+764 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+765 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+765 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+768 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+769 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+771 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+773 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+778 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+779 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+779 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+782 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+783 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+785 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+787 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+792 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+793 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+793 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+796 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+797 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+799 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+801 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+806 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+807 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+807 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+810 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+811 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+813 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+815 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+820 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+821 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+821 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+824 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+825 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+827 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+829 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+834 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+835 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+835 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+838 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+839 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+841 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+843 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+848 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+849 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+849 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+852 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+853 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+855 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+857 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+862 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+863 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+863 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+866 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+867 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+869 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+871 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+876 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+877 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+877 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+880 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+881 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+883 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+885 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+890 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+891 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+891 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+894 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+895 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+897 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+899 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+904 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+905 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+905 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+908 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+909 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+911 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+913 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+918 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+919 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+919 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+922 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+923 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+925 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+927 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+932 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+933 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+933 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+936 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+937 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+939 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+941 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+946 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+947 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+947 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+950 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+951 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+953 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+955 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+960 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+961 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+961 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+964 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+965 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+967 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+969 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+974 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+975 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+975 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+978 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+979 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+981 r=> (6, 7, 0, 1)
+dir (6, 7, 0, 1) meets .
+dir (6, 8, 0, 1) meets -
+983 r1=> (5, 8, -1, 0)
+dir (5, 8, -1, 0) meets .
+dir (4, 8, -1, 0) meets .
+dir (3, 8, -1, 0) meets .
+dir (2, 8, -1, 0) meets .
+dir (1, 8, -1, 0) meets |
+988 r1=> (1, 7, 0, -1)
+dir (1, 7, 0, -1) meets -
+989 r1=> (0, 7, -1, 0)
+dir (0, 7, -1, 0) meets .
+989 r2=> (2, 7, 1, 0)
+dir (2, 7, 1, 0) meets .
+dir (3, 7, 1, 0) meets -
+dir (4, 7, 1, 0) meets /
+992 r=> (4, 6, 0, -1)
+dir (4, 6, 0, -1) meets /
+993 r=> (5, 6, 1, 0)
+dir (5, 6, 1, 0) meets .
+dir (6, 6, 1, 0) meets \
+995 r=> (6, 7, 0, 1)

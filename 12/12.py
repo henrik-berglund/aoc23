@@ -44,15 +44,32 @@ def part1():
         cparts.append((line, p[1]))
 
 
-        for i, p in enumerate(cparts):
+        for i in range(len(cparts)):
             print(f"{lines[i]}")
-
-            parts = p[0]
-            counts = p[1]
+            cp = cparts[i]
+            print("cp ", cp)
+            parts = cp[0]
+            counts = cp[1]
             print("parts: ", parts)
             print(f"counts: {counts}\n")
 
-            last = p[-1]
-            last count =
+            cparts[i] = reduce_cpart(cparts[i])
+
+
+def reduce_cpart(p):
+    parts = p[0]
+    counts = p[1]
+    print("parts: ", parts)
+    print(f"counts: {counts}\n")
+
+    found = False
+    c1 = counts[0]
+    for x, p in enumerate(parts):
+        if p[0] == '#' and p[1] == c1:
+            print("=>> First # group matches as is")
+            new_parts = parts[x + 1:]
+            new_counts = counts[1:]
+            return (new_parts, new_counts)
+    return p
 
 part1()
