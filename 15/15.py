@@ -7,13 +7,78 @@ def readfile( day):
             string += line.strip()
     return string
 
+def hash(str):
+    cur = 0
+    for c in str:
+        a = ord(c)
+        cur += a
+        cur *= 17
+        cur = cur % 256
+    return cur
+
 def part1():
     line = readfile(15)
-    grid = []
+    sum = 0
 
     print("line ", line)
     cmds = line.split(',')
     for c in cmds:
-        print(c)
+        sum += hash(c)
 
-part1()
+    print("Part 16.1: ", sum)
+
+def parse(cmd):
+    i = 0
+    label = ""
+    while cmd[i] != '=' and cmd[i] != '-':
+        label += cmd[i]
+        i+= 1
+
+    op = cmd[i]
+    i+= 1
+
+    box = hash(label)
+    val = None
+    if op == '=':
+        val = int(cmd[i:])
+
+    return box, label, op, val
+
+
+def perform_op(box, label_in, op_in, val):
+    new_box = []
+    found = False
+    for l in box:
+        label, len = l
+        if label == label_in:
+            found = True
+            if op_in == '=':
+                new_box.append((label_in, val))
+        else:
+            new_box.append(l)
+
+    if not found and op_in == '=':
+        new_box.append((label_in, val))
+
+    return new_box
+
+
+def part2():
+    line = readfile(15)
+    boxes = []
+    for i in range(256):
+        boxes.append(list())
+
+    print("line ", line)
+    cmds = line.split(',')
+    for c in cmds:
+        box, label, op, val = parse(c)
+        print(c)
+        print(f" {box},{label},{op},{val}")
+        boxes[box] = perform_op(boxes[box], label, op, val)
+
+    for i, box in enumerate(boxes):
+        if len(box) > 0:
+            print(f"{i}, {box}")
+
+part2()
