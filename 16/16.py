@@ -98,7 +98,7 @@ def count_energized(count, grid, ener, ray, handled_rays):
     dopop = True
     ray1 = None
     ray2 = None
-    while ray1len(rays) > 0 or dopop == False:
+    while len(rays) > 0 or not dopop:
 
         if dopop:
             ray =  rays.pop(0)
