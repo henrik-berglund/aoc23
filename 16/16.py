@@ -18,13 +18,55 @@ def part1():
     for line in grid:
         print(line)
 
+
     ray = (0,0, 1,0)
     energized = set()
+
 
     count_energized(0, grid, energized, ray )
 
     print("16.1: ", len(list(energized)))
 
+def part2():
+    lines = readfile(16)
+    grid = []
+
+    for line in lines:
+        if len(line) != 0:
+            grid.append(list(line))
+
+    max_count = 0
+    for y in [0, len(grid)-1]:
+        for x in range(len(grid[0])):
+            for d in [(0, 1), (0,-1)]:
+                dx, dy = d
+                ray = (x,y,dx,dy)
+                energized = set()
+                count_energized(0, grid, energized, ray)
+
+                count = len(list(energized))
+                print("new ", count, flush=True)
+                if count > max_count:
+                    max_count = count
+
+    for x in [0, len(grid[0])-1]:
+        for y in range(len(grid)):
+            for d in [(1, 0), (-1,0)]:
+                dx, dy = d
+                ray = (x,y,dx,dy)
+                energized = set()
+                count_energized(0, grid, energized, ray)
+
+                count = len(list(energized))
+                print("new ", count, flush=True)
+                if count > max_count:
+                    max_count = count
+
+
+    print(max_count)
+
+
+    print("16.2: ", max_count)
 
 def dumpener(grid, count, ener):
 
@@ -35,7 +77,7 @@ def dumpener(grid, count, ener):
 
     if count %100 != 0:
         return
-    print("len: ", len(ener))
+    #print("len: ", len(ener))
     return
     for y, l in enumerate(grid):
         for x, d in enumerate(l):
@@ -167,4 +209,4 @@ def count_energized(count, grid, ener, ray):
             #print()
 
 
-part1()
+part2()
