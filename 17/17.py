@@ -16,7 +16,9 @@ def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited):
         newloss = heatloss + grid[ny][nx]
         if not (nx, ny) in best_visited or best_visited[(nx, ny)] > newloss:
             best_visited[(nx,ny)] = newloss
-            if nx != len(grid[0]) - 1 or  ny == len(grid) - 1:
+            if (nx == len(grid[0]) - 1) and  (ny == len(grid) - 1):
+                print("    Hittade: ", newloss)
+            else:
                 td = (nx, ny, dx, dy, steps + 1, newloss)
                 todo.insert(0, td)
                 print(f"    ({x}, {y}, {dx}, {dy}, {steps}, {heatloss} )=>({td}")
@@ -24,7 +26,7 @@ def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited):
 
     if not added:
         if (nx, ny) in best_visited:
-            print("Fanns bättre")
+            print("    Fanns bättre")
         else:
             print("    Går ej")
 
@@ -57,7 +59,7 @@ def traverse(grid):
         ndx, ndy = turnl[(dx, dy)]
         take_step(grid, todo, x, y, ndx, ndy, heatloss, 0, best_visited)
 
-    print("17.2 ", best_visited[(len(grid[0])-1, len(grid)-1)] )
+    print("17.2 ", best_visited[(len(grid[0])-1, len(grid)-1)] -3 )
 
 def part1():
     lines = readfile(17)
