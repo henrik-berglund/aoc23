@@ -36,18 +36,51 @@ def part2():
         if len(line) != 0:
             grid.append(list(line))
 
-    x=0
     max_count=0
-    dx = 1
-    dy = 0
-    for y in range(10):
-        ray = (x, y, dx, dy)
+    for y in range(len(grid)):
+
+        ray = (0, y, 1, 0)
+        x,y,dx,dy = ray
         energized = set()
         count_energized(0, grid, energized, ray)
         count = len(list(energized))
         print(f"{x},{y} {dx},{dy}: ", count, flush=True)
         if count > max_count:
             max_count = count
+
+        ray = (len(grid[0])-1, y, -1, 0)
+        x,y,dx,dy = ray
+
+        energized = set()
+        count_energized(0, grid, energized, ray)
+        count = len(list(energized))
+        print(f"{x},{y} {dx},{dy}: ", count, flush=True)
+        if count > max_count:
+            max_count = count
+
+    for x in range(len(grid[0])):
+
+        ray = (x, 0, 0, 1)
+        x,y,dx,dy = ray
+        energized = set()
+        count_energized(0, grid, energized, ray)
+        count = len(list(energized))
+        print(f"{x},{y} {dx},{dy}: ", count, flush=True)
+        if count > max_count:
+            max_count = count
+
+        ray = (x, len(grid)-1, 0, -1)
+        x,y,dx,dy = ray
+
+        energized = set()
+        count_energized(0, grid, energized, ray)
+        count = len(list(energized))
+        print(f"{x},{y} {dx},{dy}: ", count, flush=True)
+        if count > max_count:
+            max_count = count
+
+    print("16.2: ", max_count)
+
     return
 
 
