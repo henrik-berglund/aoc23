@@ -22,9 +22,9 @@ def part1():
     ray = (0,0, 1,0)
     energized = set()
 
-    handled_rays = []
+    ray_path = []
 
-    count_energized(0, grid, energized, ray, handled_rays )
+    count_energized(0, grid, energized, ray, ray_path )
 
     print("16.1: ", len(list(energized)))
 
@@ -35,6 +35,22 @@ def part2():
     for line in lines:
         if len(line) != 0:
             grid.append(list(line))
+
+    x=0
+    max_count=0
+    dx = 1
+    dy = 0
+    for y in range(4):
+        ray = (x, y, dx,dy)
+
+        energized = set()
+        count_energized(0, grid, energized, ray, [])
+        count = len(list(energized))
+        print(f"{x},{y} {dx},{dy}: ", count, flush=True)
+        if count > max_count:
+            max_count = count
+    return
+
 
     max_count = 0
     for y in [0, len(grid)-1]:
@@ -88,7 +104,7 @@ def dumpener(grid, count, ener):
                 print(".", end = "")
         print()
 
-def count_energized(count, grid, ener, ray, handled_rays):
+def count_energized(count, grid, ener, ray, ray_path):
     width = len(grid[0])
     height = len(grid)
 
@@ -117,10 +133,10 @@ def count_energized(count, grid, ener, ray, handled_rays):
             continue
 
 
-        if ray in handled_rays:
+        if ray in ray_path:
             dopop = True
             continue
-        handled_rays.append(ray)
+        ray_path.append(ray)
 
         ener.add((x,y))
         #dumpener(grid, count, ener)
@@ -209,5 +225,5 @@ def count_energized(count, grid, ener, ray, handled_rays):
             #print()
 
 start = time.time()
-part1()
+part2()
 print("Time: ", time.time()-start)
