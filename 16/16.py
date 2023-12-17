@@ -22,7 +22,7 @@ def part1():
     ray = (0,0, 1,0)
     energized = set()
 
-    handled_rays = set()
+    handled_rays = []
 
     count_energized(0, grid, energized, ray, handled_rays )
 
@@ -116,11 +116,11 @@ def count_energized(count, grid, ener, ray, handled_rays):
             dopop = True
             continue
 
-        rs = f"{ray}"
-        if rs in handled_rays:
+
+        if ray in handled_rays:
             dopop = True
             continue
-        handled_rays.add(rs)
+        handled_rays.append(ray)
 
         ener.add((x,y))
         #dumpener(grid, count, ener)
