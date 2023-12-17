@@ -22,8 +22,9 @@ def part1():
     ray = (0,0, 1,0)
     energized = set()
 
+    handled_rays = set()
 
-    count_energized(0, grid, energized, ray )
+    count_energized(0, grid, energized, ray, handled_rays )
 
     print("16.1: ", len(list(energized)))
 
@@ -87,18 +88,17 @@ def dumpener(grid, count, ener):
                 print(".", end = "")
         print()
 
-def count_energized(count, grid, ener, ray):
+def count_energized(count, grid, ener, ray, handled_rays):
     width = len(grid[0])
     height = len(grid)
 
     rays = []
     rays.append(ray)
-    handled_rays = set()
 
     dopop = True
     ray1 = None
     ray2 = None
-    while len(rays) > 0 or dopop == False:
+    while ray1len(rays) > 0 or dopop == False:
 
         if dopop:
             ray =  rays.pop(0)
