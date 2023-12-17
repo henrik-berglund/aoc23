@@ -24,7 +24,7 @@ def part1():
 
     ray_path = []
     previous_paths = []
-    count_energized(0, grid, energized, ray, ray_path, previous_paths )
+    count_energized(0, grid, energized, ray, ray_path)
 
     print("16.1: ", len(list(energized)))
 
@@ -40,13 +40,10 @@ def part2():
     max_count=0
     dx = 1
     dy = 0
-    previous_paths = []
     for y in range(10):
         ray = (x, y, dx, dy)
-        path = []
         energized = set()
-        count_energized(0, grid, energized, ray, path, previous_paths)
-        previous_paths.append(path)
+        count_energized(0, grid, energized, ray)
         count = len(list(energized))
         print(f"{x},{y} {dx},{dy}: ", count, flush=True)
         if count > max_count:
@@ -88,39 +85,51 @@ def part2():
     print("16.2: ", max_count)
 
 
-def count_energized(count, grid, ener, ray, ray_path, previous_paths):
+def count_energized(count, grid, ener, ray):
     width = len(grid[0])
     height = len(grid)
 
-    rays = []
-    rays.append(ray)
+    to_process = []
+    to_process.append(ray)
+
+    ray_path= []
 
     dopop = True
     ray1 = None
     ray2 = None
-    while len(rays) > 0 or not dopop:
+    while len(to_process) > 0  or  ray1:
 
-        if dopop:
-            ray =  rays.pop(0)
-        else:
+        if ray1:
             ray = ray1
+        else:
+            ray =  to_process.pop(0)
 
         x, y, dx, dy = ray
-
 
         ray1 = None
         ray2 = None
 
-        dopop = False
         if x == width or y == height or x == -1 or y== -1:
-            dopop = True
             continue
-
 
         if ray in ray_path:
-            dopop = True
             continue
-        ray_path.append(ray)
+        else:
+            ray_path.append(ray)
+
+        # for prev in previous_paths:
+        #     if False: #ray in prev:
+        #         index = prev.index(ray)
+        #         to_copy = prev[index:]
+        #         ray_path.extend(to_copy)
+        #
+        #         for c in to_copy:
+        #             cx, cy, cdx, cdy = c
+        #             ener.add((cx, cy))
+        #
+        #     dopop = len(rays) > 0
+        #     continue
+
 
         ener.add((x,y))
 
@@ -133,17 +142,17 @@ def count_energized(count, grid, ener, ray, ray_path, previous_paths):
             ray1 = (x, y, dx, dy)
         elif c == '|':
             ray1 = (x, y-1, 0, -1)
-            rays.append(ray1)
+            to_process.append(ray1)
 
             ray2 = (x, y+1, 0, +1)
-            rays.append(ray2)
+            to_process.append(ray2)
         elif c == '-':
 
             ray1 = (x-1, y, -1, 0)
-            rays.append(ray1)
+            to_process.append(ray1)
 
             ray2 = (x+1, y, 1, 0)
-            rays.append(ray2)
+            to_process.append(ray2)
 
         elif c == '/':
             new_dir = {(1,0): (0,-1), (-1,0): (0,1), (0,1): (-1,0),  (0,-1): (1,0)}
