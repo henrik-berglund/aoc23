@@ -33,7 +33,10 @@ def dumpener(grid, count, ener):
         x = int(st[0])
         y = int(st[1])
 
-
+    if count %100 != 0:
+        return
+    print("len: ", len(ener))
+    return
     for y, l in enumerate(grid):
         for x, d in enumerate(l):
             if f"{x},{y}" in ener:
@@ -41,7 +44,6 @@ def dumpener(grid, count, ener):
             else:
                 print(".", end = "")
         print()
-    print("len: ", len(ener))
 
 def count_energized(count, grid, ener, ray):
     width = len(grid[0])
@@ -49,6 +51,7 @@ def count_energized(count, grid, ener, ray):
 
     rays = []
     rays.append(ray)
+    handled_rays = set()
 
     dopop = True
     ray1 = None
@@ -71,13 +74,19 @@ def count_energized(count, grid, ener, ray):
             dopop = True
             continue
 
+        rs = f"{ray}"
+        if rs in handled_rays:
+            dopop = True
+            continue
+        handled_rays.add(rs)
+
         ener.add(f"{x},{y}")
         dumpener(grid, count, ener)
 
         c = grid[y][x]
         #print(f"rays {rays} ")
         ltype = '- pop' if dopop else '-'
-        print(f"- {ltype} {ray} meets {c}", flush=True, end="")
+        #print(f"- {ltype} {ray} meets {c}", flush=True, end="")
         count += 1
 
         if c == '.' or (c == '|' and dy != 0 ) or (c == '-' and dx != 0 ):
@@ -87,7 +96,7 @@ def count_energized(count, grid, ener, ray):
             #count_energized(count, grid,ener,   )
             ray1 = (x, y, dx, dy)
 
-            print("=> ray ", ray1)
+            #print("=> ray ", ray1)
 
         elif c == '|':
 
@@ -101,7 +110,7 @@ def count_energized(count, grid, ener, ray):
             #count_energized(count, grid, ener, ray)
             rays.append(ray2)
 
-            print("=> ray1 ", ray1, " ray2 ", ray2)
+            #print("=> ray1 ", ray1, " ray2 ", ray2)
 
         elif c == '-':
 
@@ -114,7 +123,7 @@ def count_energized(count, grid, ener, ray):
             #print(f"{count} r2=> {ray}")
             #count_energized(count, grid, ener, ray)
             rays.append(ray2)
-            print("=> ray1 ", ray1, " ray2 ", ray2)
+            #print("=> ray1 ", ray1, " ray2 ", ray2)
 
         elif c == '/':
             new_dir = {'1,0': (0,-1), '-1,0': (0,1), '0,1': (-1,0),  '0,-1': (1,0)}
@@ -127,7 +136,7 @@ def count_energized(count, grid, ener, ray):
 
             #count_energized(count, grid, ener, ray)
             #rays.append(ray)
-            print("=> ray1 ", ray1)
+            #print("=> ray1 ", ray1)
 
         elif c == '\\':
             new_dir = {'1,0': (0,1), '-1,0': (0,-1), '0,1': (1,0),  '0,-1': (-1,0)}
@@ -140,9 +149,9 @@ def count_energized(count, grid, ener, ray):
 
             #count_energized(count, grid, ener,ray)
             #rays.append(ray)
-            print("=> ray1 ", ray1)
+            #print("=> ray1 ", ray1)
 
-        print(f"{count}------------------------")
+        #print(f"{count}------------------------")
         for iy, l in enumerate(grid):
             for ix, c in enumerate(l):
                 printed = False
