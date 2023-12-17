@@ -122,8 +122,8 @@ def count_energized(count, grid, ener, ray):
             continue
         handled_rays.add(rs)
 
-        ener.add(f"{x},{y}")
-        dumpener(grid, count, ener)
+        ener.add((x,y))
+        #dumpener(grid, count, ener)
 
         c = grid[y][x]
         #print(f"rays {rays} ")
@@ -168,9 +168,9 @@ def count_energized(count, grid, ener, ray):
             #print("=> ray1 ", ray1, " ray2 ", ray2)
 
         elif c == '/':
-            new_dir = {'1,0': (0,-1), '-1,0': (0,1), '0,1': (-1,0),  '0,-1': (1,0)}
+            new_dir = {(1,0): (0,-1), (-1,0): (0,1), (0,1): (-1,0),  (0,-1): (1,0)}
 
-            key = f"{dx},{dy}"
+            key = (dx, dy)
             dx, dy = new_dir[key]
 
             ray1 = (x+dx, y+dy, dx, dy)
@@ -181,9 +181,9 @@ def count_energized(count, grid, ener, ray):
             #print("=> ray1 ", ray1)
 
         elif c == '\\':
-            new_dir = {'1,0': (0,1), '-1,0': (0,-1), '0,1': (1,0),  '0,-1': (-1,0)}
+            new_dir = {(1,0): (0,1), (-1,0): (0,-1), (0,1): (1,0),  (0,-1): (-1,0)}
 
-            key = f"{dx},{dy}"
+            key = (dx,dy)
             dx, dy = new_dir[key]
 
             ray1 = (x+dx, y+dy, dx, dy)
@@ -208,5 +208,6 @@ def count_energized(count, grid, ener, ray):
                     pass
             #print()
 
-
-part2()
+start = time.time()
+part1()
+print("Time: ", time.time()-start)
