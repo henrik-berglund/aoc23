@@ -41,9 +41,11 @@ def traverse(grid):
         x,y, dx, dy, steps, heatloss = pos
         print(f"\nWhile {pos}, heatloss {heatloss}")
         # Straight
-        print("straigt")
+        print("straight")
         if steps < 3: # straight
             take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited)
+        else:
+            print("    Mer än 3")
 
         # Right
         print("right")
