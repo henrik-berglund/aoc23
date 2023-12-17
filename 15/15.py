@@ -62,6 +62,14 @@ def perform_op(box, label_in, op_in, val):
 
     return new_box
 
+def focalp(box, boxno):
+    sum = 0
+    for j, l in enumerate(box):
+        label, val = l
+        s= (boxno+1) * (j+1) * val
+        sum += s
+        print(f"{label} {s}")
+    return sum
 
 def part2():
     line = readfile(15)
@@ -77,8 +85,12 @@ def part2():
         print(f" {box},{label},{op},{val}")
         boxes[box] = perform_op(boxes[box], label, op, val)
 
+    sum = 0
     for i, box in enumerate(boxes):
         if len(box) > 0:
             print(f"{i}, {box}")
+            sum += focalp(box, i)
+
+    print("15.2: ", sum)
 
 part2()
