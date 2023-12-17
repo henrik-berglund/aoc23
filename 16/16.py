@@ -23,8 +23,8 @@ def part1():
     energized = set()
 
     ray_path = []
-
-    count_energized(0, grid, energized, ray, ray_path )
+    previous_paths = []
+    count_energized(0, grid, energized, ray, ray_path, previous_paths )
 
     print("16.1: ", len(list(energized)))
 
@@ -40,11 +40,13 @@ def part2():
     max_count=0
     dx = 1
     dy = 0
+    previous_paths = []
     for y in range(4):
-        ray = (x, y, dx,dy)
-
+        ray = (x, y, dx, dy)
+        path = []
         energized = set()
-        count_energized(0, grid, energized, ray, [])
+        count_energized(0, grid, energized, ray, path, previous_paths)
+        previous_paths.append(path)
         count = len(list(energized))
         print(f"{x},{y} {dx},{dy}: ", count, flush=True)
         if count > max_count:
@@ -104,7 +106,7 @@ def dumpener(grid, count, ener):
                 print(".", end = "")
         print()
 
-def count_energized(count, grid, ener, ray, ray_path):
+def count_energized(count, grid, ener, ray, ray_path, previous_paths):
     width = len(grid[0])
     height = len(grid)
 
