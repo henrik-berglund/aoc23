@@ -8,32 +8,43 @@ def readfile( day):
             lines.append(l)
     return lines
 
-def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_found, path):
+def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_found, path, log):
     nx = x + dx
     ny = y + dy
     added = False
     if nx >= 0 and nx < len(grid[0]) and ny >= 0 and ny < len(grid):
         newloss = heatloss + grid[ny][nx]
-        if not (nx, ny) in best_visited or best_visited[(nx, ny)] > newloss:
-            best_visited[(nx,ny)] = newloss
-            if newloss > best_found:
-                #print("Pruning at ", best_found)
-                pass
-            elif (nx == len(grid[0]) - 1) and  (ny == len(grid) - 1):
+
+        if (nx, ny) in best_visited:
+            best_loss, best_steps = best_visited[(nx, ny)]
+        else:
+            best_loss, best_steps = (None, None)
+
+        if best_loss and best_loss < newloss:
+            if log:
+                print("Pruning at ", best_found)
+            pass
+        elif not best_loss or best_loss > newloss or (best_loss == newloss and best_steps > (steps+1)):
+            best_visited[(nx,ny)] = (newloss, steps+1)
+
+            if (nx == len(grid[0]) - 1) and  (ny == len(grid) - 1):
                 best_found = newloss
-                print(f"Best path to {nx} {ny}: ", path + [(nx,ny)])
+                #print(f"Best path to {nx} {ny}: ", path + [(nx,ny)])
             else:
                 td = (nx, ny, dx, dy, steps + 1, newloss, path + [(nx,ny)])
                 todo.insert(0, td)
-                #print(f"    ({x}, {y}, {dx}, {dy}, {steps}, {heatloss} )=>({td}")
+                if log:
+                    print(f"    ({x}, {y}, {dx}, {dy}, {steps}, {heatloss} )=>({td}")
                 added = True
 
     if not added:
         if (nx, ny) in best_visited:
-            #print("    Fanns bättre")
+            if log:
+                print("    Fanns bättre")
             pass
         else:
-            #print("    Går ej")
+            if log:
+                print("    Går ej")
             pass
     return best_found
 
@@ -49,29 +60,43 @@ def traverse(grid):
     while len(todo) > 0:
         pos = todo.pop(0)
         x,y, dx, dy, steps, heatloss, path = pos
-        #print(f"\nWhile {pos}, heatloss {heatloss}")
         # Straight
-        #print("straight")
+
+        log = False
+        if (x,y) ==(4,1):
+            log = True
+
+        if log:
+            print(f"\nWhile {pos}, heatloss {heatloss}")
+
+        if log:
+            print("straight")
+
         if steps < 3: # straight
             best_found = take_step(grid, todo, x, y, dx, dy, heatloss,
-                                   steps, best_visited, best_found, path)
-        else:
-            #print("    Mer än 3")
+                                   steps, best_visited, best_found, path, log)
+        elif log:
+            print(f"    Mer än 3: {steps}")
             pass
 
         # Right
-        #print("right")
+        if log:
+            print("right")
         ndx, ndy = turnr[(dx, dy)]
         best_found = take_step(grid, todo, x, y, ndx, ndy, heatloss,
-                               0, best_visited, best_found, path)
+                               -1, best_visited, best_found, path, log)
 
         # Left
-        #print("Left")
+        if log:
+            print("Left")
         ndx, ndy = turnl[(dx, dy)]
         best_found = take_step(grid, todo, x, y, ndx, ndy, heatloss,
-                               0, best_visited, best_found, path)
+                               -1, best_visited, best_found, path, log)
 
     print("17.2 ", best_visited[(len(grid[0])-1, len(grid)-1)]  )
+
+    for pos in [(1,0), (2,0), (2,1), (3,1), (4,1), (5,1), (5,0), (6,0), (7,0), (8,0), (8,1), (8,2)]:
+        print(f"{pos}: {best_visited[pos]}")
 
 def part1():
     lines = readfile(17)
