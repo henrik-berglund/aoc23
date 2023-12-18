@@ -16,16 +16,16 @@ def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_foun
         newloss = heatloss + grid[ny][nx]
 
         if (nx, ny) in best_visited:
-            best_loss, best_steps = best_visited[(nx, ny)]
+            best_loss, best_steps, best_path = best_visited[(nx, ny)]
         else:
-            best_loss, best_steps = (None, None)
+            best_loss, best_steps, best_path = (None, None, None)
 
         if best_loss and best_loss < newloss:
             if log:
                 print("Pruning at ", best_found)
             pass
         elif not best_loss or best_loss > newloss or (best_loss == newloss and best_steps > (steps+1)):
-            best_visited[(nx,ny)] = (newloss, steps+1)
+            best_visited[(nx,ny)] = (newloss, steps+1, path)
 
             if (nx == len(grid[0]) - 1) and  (ny == len(grid) - 1):
                 best_found = newloss
@@ -51,7 +51,7 @@ def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_foun
 def traverse(grid):
     todo = [(0,0,1,0,0,0,[] )]
     best_visited = {}
-    best_visited[(0,0)] = 0
+    best_visited[(0,0)] = (0, [])
 
     turnl = { (1,0): (0,-1), (-1,0): (0, 1), (0,1): (1,0), (0,-1): (-1,0) }
     turnr = { (1,0): (0,1), (-1, 0): (0,-1), (0, 1): (-1, 0), (0,-1): (1,0)}
