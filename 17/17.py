@@ -88,7 +88,7 @@ def traverse(grid):
         if log:
             print("continue straight")
 
-        if steps < 3: # straight
+        if steps < 10: # straight
             best_found = take_step(grid, todo, x, y, dx, dy, heatloss,
                                    steps, best_visited, best_found, log)
         elif log:
@@ -96,17 +96,22 @@ def traverse(grid):
             pass
 
         # Right
-        if log:
-            print("right")
-        ndx, ndy = turnr[(dx, dy)]
-        best_found = take_step(grid, todo, x, y, ndx, ndy, heatloss,
-                               0, best_visited, best_found, log)
+        if steps >= 4:
+            if log:
+                print("right")
+
+            ndx, ndy = turnr[(dx, dy)]
+            best_found = take_step(grid, todo, x, y, ndx, ndy, heatloss,
+                           0, best_visited, best_found, log)
 
         # Left
-        if log:
-            print("Left")
-        ndx, ndy = turnl[(dx, dy)]
-        best_found = take_step(grid, todo, x, y, ndx, ndy, heatloss,
+
+        if steps >= 4:
+            ndx, ndy = turnl[(dx, dy)]
+            if log:
+                print("Left")
+
+            best_found = take_step(grid, todo, x, y, ndx, ndy, heatloss,
                                0, best_visited, best_found, log)
 
     print("17.1 ", best_found)
@@ -124,8 +129,9 @@ def part1():
 
     #for line in grid:
     #    print(line)
-
+    start = time.time()
     traverse(grid)
+    print("Time: ", time.time()-start)
 
 part1()
 
