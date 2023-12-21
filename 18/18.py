@@ -38,7 +38,16 @@ def part1():
 
     print(max_x, max_y)
 
+    grid = []
+    for y in range(max_y+1):
+        grid.append(list('.'*(max_x+1)))
 
+    for c in coords:
+        x, y = c
+        grid[y][x] = '#'
+
+    for y in range(max_y+1):
+        print(grid[y])
 
     #for line in grid:
     #    print(line)
