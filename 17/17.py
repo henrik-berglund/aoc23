@@ -8,12 +8,28 @@ def readfile( day):
             lines.append(l)
     return lines
 
-def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_found, path, log):
+def max_best(grid):
+    w=0
+    y = 0
+    for x in range(1, len(grid[0])):
+        w += grid[y][x]
+        print(f"{x},{y}: {w}")
+
+        y+= 1
+        w += grid[y][x]
+        print(f"{x},{y}: {w}")
+    return w
+
+def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_found, log):
     nx = x + dx
     ny = y + dy
     add = False
     if nx >= 0 and nx < len(grid[0]) and ny >= 0 and ny < len(grid):
         new_loss = heatloss + grid[ny][nx]
+
+        if new_loss >= best_found:
+            return best_found
+
         new_steps = steps+1
         if not (nx, ny, dx, dy ) in best_visited:
             add = True
@@ -22,7 +38,7 @@ def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_foun
             visited = best_visited[(nx, ny, dx, dy )]
             add = True
             for v in visited:
-                best_loss, best_steps, best_path = v
+                best_loss, best_steps= v
                 #if log:
                 #    print("Checking prev")
 
@@ -35,15 +51,14 @@ def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_foun
 
 
         if add:
-            td = (nx, ny, dx, dy, new_steps, new_loss, path + [(nx, ny)])
+            td = (nx, ny, dx, dy, new_steps, new_loss)
             todo.insert(0, td)
-            best_visited[(nx, ny, dx, dy)].append((new_loss, new_steps, path))
+            best_visited[(nx, ny, dx, dy)].append((new_loss, new_steps))
 
             if nx == len(grid[0])-1 and ny == len(grid)-1:
-                bf, p = best_found
-                if new_loss < bf:
-                    #print("*** new best")
-                    best_found = (new_loss, path)
+                if new_loss < best_found:
+                    print("*** new best ", new_loss, flush=True)
+                    best_found = new_loss
 
             if log:
                 print(f"    ({x}, {y}, {dx}, {dy}, {steps}, {heatloss} )=>({td}")
@@ -51,16 +66,16 @@ def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_foun
     return best_found
 
 def traverse(grid):
-    todo = [(0,0,1,0,0,0,[] )]
+    todo = [(0,0,1,0,0,0 )]
     best_visited = {}
 
     turnl = { (1,0): (0,-1), (-1,0): (0, 1), (0,1): (1,0), (0,-1): (-1,0) }
     turnr = { (1,0): (0,1), (-1, 0): (0,-1), (0, 1): (-1, 0), (0,-1): (1,0)}
-    best_found = (9999999999999, [])
+    best_found = max_best(grid)
 
     while len(todo) > 0:
         pos = todo.pop(0)
-        x,y, dx, dy, steps, heatloss, path = pos
+        x,y, dx, dy, steps, heatloss = pos
         # Straight
 
         log = False
@@ -75,7 +90,7 @@ def traverse(grid):
 
         if steps < 3: # straight
             best_found = take_step(grid, todo, x, y, dx, dy, heatloss,
-                                   steps, best_visited, best_found, path, log)
+                                   steps, best_visited, best_found, log)
         elif log:
             print(f"    Mer än 3: {steps}")
             pass
@@ -85,14 +100,14 @@ def traverse(grid):
             print("right")
         ndx, ndy = turnr[(dx, dy)]
         best_found = take_step(grid, todo, x, y, ndx, ndy, heatloss,
-                               0, best_visited, best_found, path, log)
+                               0, best_visited, best_found, log)
 
         # Left
         if log:
             print("Left")
         ndx, ndy = turnl[(dx, dy)]
         best_found = take_step(grid, todo, x, y, ndx, ndy, heatloss,
-                               0, best_visited, best_found, path, log)
+                               0, best_visited, best_found, log)
 
     print("17.1 ", best_found)
 
@@ -107,9 +122,10 @@ def part1():
     for line in lines:
             grid.append(list(line))
 
-    for line in grid:
-        print(line)
+    #for line in grid:
+    #    print(line)
 
     traverse(grid)
 
 part1()
+
