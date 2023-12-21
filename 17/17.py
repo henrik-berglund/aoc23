@@ -42,11 +42,11 @@ def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_foun
             if nx == len(grid[0])-1 and ny == len(grid)-1:
                 bf, p = best_found
                 if new_loss < bf:
-                    print("*** new best")
+                    #print("*** new best")
                     best_found = (new_loss, path)
 
             if log:
-                print(f"    ({x}, {y}, {dx}, {dy}, {new_steps}, {heatloss} )=>({td}")
+                print(f"    ({x}, {y}, {dx}, {dy}, {steps}, {heatloss} )=>({td}")
 
     return best_found
 
@@ -65,10 +65,10 @@ def traverse(grid):
 
         log = False
         #if (x,y) ==(4,1):
-        log = True
+        #log = True
 
         if log:
-            print(f"\nWhile {pos}, heatloss {heatloss}")
+            print(f"\nPopped {pos}, heatloss {heatloss}")
 
         if log:
             print("continue straight")
@@ -85,14 +85,14 @@ def traverse(grid):
             print("right")
         ndx, ndy = turnr[(dx, dy)]
         best_found = take_step(grid, todo, x, y, ndx, ndy, heatloss,
-                               -1, best_visited, best_found, path, log)
+                               0, best_visited, best_found, path, log)
 
         # Left
         if log:
             print("Left")
         ndx, ndy = turnl[(dx, dy)]
         best_found = take_step(grid, todo, x, y, ndx, ndy, heatloss,
-                               -1, best_visited, best_found, path, log)
+                               0, best_visited, best_found, path, log)
 
     print("17.1 ", best_found)
 
