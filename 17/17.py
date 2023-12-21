@@ -46,7 +46,7 @@ def take_step(grid, todo, x, y, dx, dy, heatloss, steps, best_visited, best_foun
                     best_found = (new_loss, path)
 
             if log:
-                print(f"    ({x}, {y}, {dx}, {dy}, {steps}, {heatloss} )=>({td}")
+                print(f"    ({x}, {y}, {dx}, {dy}, {new_steps}, {heatloss} )=>({td}")
 
     return best_found
 
