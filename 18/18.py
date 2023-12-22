@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+from shapely.geometry import Point, Polygon
+
 import time
 def readfile( day):
     file_name = f"input_{day}.txt"
@@ -27,30 +30,67 @@ def part1():
             y += dy
             coords.append((x,y))
 
+
     max_x =0
     max_y = 0
+    min_x = 999
+    min_y = 999
+
     for c in coords:
+
         x,y = c
         if x > max_x:
             max_x = x
         if y > max_y:
             max_y = y
 
-    print(max_x, max_y)
+        if y < min_y:
+            min_y = y
 
-    grid = []
-    for y in range(max_y+1):
-        grid.append(list('.'*(max_x+1)))
+        if x < min_x:
+            min_x = x
 
-    for c in coords:
-        x, y = c
-        grid[y][x] = '#'
+    width = max_x - min_x + 1
+    height = max_y- min_y + 1
 
-    for y in range(max_y+1):
-        print(grid[y])
+    print(min_x, min_y, max_x, max_y)
 
-    #for line in grid:
-    #    print(line)
+    #grid = []
+    #for y in range(height):
+    #    grid.append(list('.'*width))
+
+#    for c in coords:
+##        x, y = c
+  #      x -= min_x
+   #     y -= min_y
+        #print(x, y)
+    #    grid[y][x] = '#'
+
+    count=0
+    poly = Polygon(coords)
+    #plot_polygon(poly)
+    for y in range(min_y, max_y+1):
+        for x in range(min_x, max_x+1):
+            point = Point(x, y)
+            inside = point.within(poly)
+            if inside:
+                count += 1
+
+    print("18.1: ", count + len(coords)-1)
+    print("Poly area", poly.area)
+
+def plot_polygon(polygon):
+    x, y = polygon.exterior.xy
+
+    # Plotting
+    plt.figure()
+    plt.plot(x, y)
+    plt.fill(x, y, alpha=0.3)  # Optional: fill the polygon with a semi-transparent color
+    plt.title("Polygon Plot")
+    plt.xlabel("X-axis")
+    plt.ylabel("Y-axis")
+    plt.grid(True)
+    plt.show()
 
 part1()
 
